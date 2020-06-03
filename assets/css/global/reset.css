@@ -1,0 +1,60 @@
+/*
+==========================================================================================
+  Reset
+==========================================================================================
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+audio,
+canvas,
+embed,
+iframe,
+input,
+img,
+object,
+select,
+textarea,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img { vertical-align: top; }
+
+* {
+  > :first-child { margin-top: 0; }
+
+  > :last-child { margin-bottom: 0; }
+}
+
+::placeholder { opacity: 1; }
+
+:focus { outline: inherit; }

@@ -1,0 +1,43 @@
+/*
+==========================================================================================
+  Leaderboard
+==========================================================================================
+*/
+
+.leaderboard {
+  display: grid;
+  gap: var(--spacing);
+}
+
+.leaders {
+  list-style: none;
+  counter-reset: leader;
+}
+
+.leader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.375em;
+  border-bottom: var(--border-base);
+  color: var(--color-base);
+  text-decoration: none;
+
+  &[data-rank] {
+    &::before { content: attr(data-rank) "."; }
+  }
+
+  &::before {
+    content: counter(leader) ".";
+    flex: 0 0 auto;
+    margin-right: 0.375em;
+    min-width: 1.875em;
+    counter-increment: leader;
+  }
+
+  &:hover { background-color: hsla(var(--hue-secondary), var(--saturation-secondary), 0%, 6.25%); }
+
+  .name { flex: 0 1 100%; }
+
+  .score { flex: 0 0 auto; }
+}

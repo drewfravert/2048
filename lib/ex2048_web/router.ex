@@ -4,7 +4,7 @@ defmodule Ex2048Web.Router do
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
-    plug :fetch_live_flash
+    plug :fetch_flash
     plug :put_root_layout, {Ex2048Web.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
@@ -17,13 +17,17 @@ defmodule Ex2048Web.Router do
   scope "/", Ex2048Web do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    get "/", PageController, :index
+    get "/leaderboard", PageController, :leaderboard
+    get "/leaderboard/:page", PageController, :leaderboard
+    get "/game", PageController, :game
+    get "/game/:id", PageController, :game
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Ex2048Web do
-  #   pipe_through :api
-  # end
+  scope "/api", Ex2048Web do
+    pipe_through :api
+  end
 
   # Enables LiveDashboard only for development
   #

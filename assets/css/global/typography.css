@@ -1,0 +1,50 @@
+/*
+==========================================================================================
+  Typography
+==========================================================================================
+*/
+
+a {
+  color: var(--color-link);
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.09375em;
+  text-underline-offset: 0.09375em;
+
+  &:hover { color: var(--color-base); }
+}
+
+strong, b { font-weight: var(--font-weight-bold); }
+
+em, i { font-style: italic; }
+
+u {
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.09375em;
+  text-underline-offset: 0.09375em;
+}
+
+small { font-size: var(--font-size-small); }
+
+sub,
+sup {
+  vertical-align: initial;
+  font-size: initial;
+}
+
+@supports (font-variant-position: sub) {
+  sub,
+  sup {
+    vertical-align: baseline;
+    font-size: inherit;
+  }
+
+  sub { font-variant-position: sub; }
+
+  sup { font-variant-position: super; }
+}
+
+p { margin-bottom: 1em; }

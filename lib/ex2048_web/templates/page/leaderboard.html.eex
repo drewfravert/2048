@@ -1,0 +1,123 @@
+<article class="leaderboard">
+  <header>
+    <%= link "← Back to game", to: Routes.page_path(@conn, :index) %>
+    <h1 class="text-xxxl text-black">Leaderboard</h1>
+    <p class="text-small">Below is a list of every individual that has played this instance of 2048 since the application was deployed. Data is not stored in a traditional database, but instead in a long running process managed by Elixir.</p>
+  </header>
+  <section>
+    <h2 class="text-smaller text-semibold text-uppercase my-1">Your Best Ranking</h2>
+    <%= link to: Routes.page_path(@conn, :game), class: "leader", data_rank: "768" do %>
+      <strong class="name">John Doe</strong>
+      <span class="score">10,000,000</span>
+    <% end %>
+  </section>
+  <section>
+    <h2 class="text-smaller text-semibold text-uppercase my-1">All Time Rankings (12345 Players)</h2>
+    <div class="leaders">
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game), class: "leader" do %>
+        <strong class="name">John Doe</strong>
+        <span class="score">10,000,000</span>
+      <% end %>
+    </div>
+  </section>
+  <footer class="flex justify-between align-center">
+    <%= link "← Previous", to: Routes.page_path(@conn, :index) %>
+    <%= link "Next →", to: Routes.page_path(@conn, :index) %>
+  </footer>
+</article>

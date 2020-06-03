@@ -14,9 +14,10 @@ config :ex2048, Ex2048Web.Endpoint,
   watchers: [
     node: [
       "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
+      "--config",
+      "webpack.development.js",
       "--watch-stdin",
+      "--color",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]

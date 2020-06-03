@@ -1,0 +1,198 @@
+/*
+==========================================================================================
+  Game
+==========================================================================================
+*/
+
+.game {
+  display: grid;
+  gap: var(--spacing);
+
+  .game-header {
+    display: grid;
+    grid-template-areas:
+      "logo logo logo . score score best        best       "
+      "logo logo logo . new   new   leaderboard leaderboard"
+      "logo logo logo . .     .     .           .          ";
+    grid-template-columns: repeat(calc(var(--game-columns) * 2), 1fr);
+    gap: var(--spacing);
+    align-content: start;
+
+    .logo {
+      grid-area: logo;
+      padding-bottom: 100%;
+      background-color: var(--color-tile-2048);
+      border-radius: var(--border-radius-base);
+      font-size: var(--font-size-xxxxxl);
+      font-weight: var(--font-weight-black);
+      color: var(--color-white);
+      position: relative;
+
+      &::after {
+        content: "2048";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+      }
+    }
+
+    .score {
+      padding-bottom: 100%;
+      background-color: var(--color-lightergray);
+      border-radius: var(--border-radius-base);
+      font-weight: var(--font-weight-semibold);
+      line-height: 1;
+      text-align: center;
+      position: relative;
+
+      &::before {
+        content: attr(data-title);
+        font-size: var(--font-size-large);
+        color: var(--color-darkgray);
+        text-transform: uppercase;
+        position: absolute;
+        top: calc(25% - 0.5em);
+        left: 0;
+        right: 0;
+      }
+
+      &::after {
+        content: attr(data-value);
+        font-size: var(--font-size-xxl);
+        color: var(--color-white);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: calc(50% - 0.5em);
+      }
+    }
+
+    .current { grid-area: score; }
+
+    .best { grid-area: best; }
+
+    .new { grid-area: new; }
+
+    .leaderboard { grid-area: leaderboard; }
+  }
+
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--game-columns), 1fr);
+    grid-template-rows: repeat(var(--game-rows), 1fr);
+    gap: var(--spacing);
+    padding: var(--spacing);
+    background-color: var(--color-lightgray);
+    border-radius: var(--border-radius-base);
+    width: calc(var(--spacing) * 32);
+    height: calc(var(--spacing) * 32);
+
+    .cell {
+      display: grid;
+      background-color: var(--color-lightergray);
+      border-radius: calc(var(--border-radius-base) / 2);
+    }
+
+    .tile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-darkergray);
+      border-radius: calc(var(--border-radius-base) / 2);
+      font-size: var(--font-size-xxl);
+      font-weight: var(--font-weight-black);
+      color: var(--color-white);
+      line-height: 1;
+      animation-name: spawn;
+      animation-duration: 300ms;
+      animation-delay: 100ms;
+      animation-timing-function: ease;
+      animation-fill-mode: backwards;
+
+      &::after { content: attr(data-value); }
+
+      &[data-value="2"],
+      &[data-value="4"],
+      &[data-value="8"],
+      &[data-value="16"] {
+        color: var(--color-darkgray);
+      }
+
+      &[data-value="2"],
+      &[data-value="4"],
+      &[data-value="8"],
+      &[data-value="16"],
+      &[data-value="32"],
+      &[data-value="64"] {
+        font-size: var(--font-size-xxxxxl);
+      }
+
+      &[data-value="128"],
+      &[data-value="256"],
+      &[data-value="512"] {
+        font-size: var(--font-size-xxxxl);
+      }
+
+      &[data-value="1024"],
+      &[data-value="2048"],
+      &[data-value="4096"],
+      &[data-value="8192"] {
+        font-size: var(--font-size-xxxl);
+      }
+
+      &[data-value="2"] { background-color: var(--color-tile-2); }
+
+      &[data-value="4"] { background-color: var(--color-tile-4); }
+
+      &[data-value="8"] { background-color: var(--color-tile-8); }
+
+      &[data-value="16"] { background-color: var(--color-tile-16); }
+
+      &[data-value="32"] { background-color: var(--color-tile-32); }
+
+      &[data-value="64"] { background-color: var(--color-tile-64); }
+
+      &[data-value="128"] { background-color: var(--color-tile-128); }
+
+      &[data-value="256"] { background-color: var(--color-tile-256); }
+
+      &[data-value="512"] { background-color: var(--color-tile-512); }
+
+      &[data-value="1024"] { background-color: var(--color-tile-1024); }
+
+      &[data-value="2048"] { background-color: var(--color-tile-2048); }
+
+      &[data-value="4096"] { background-color: var(--color-tile-4096); }
+
+      &[data-value="8192"] { background-color: var(--color-tile-8192); }
+
+      &[data-value="16384"] { background-color: var(--color-tile-16384); }
+
+      &[data-value="32768"] { background-color: var(--color-tile-32768); }
+
+      &[data-value="65536"] { background-color: var(--color-tile-65536); }
+
+      &[data-value="131072"] { background-color: var(--color-tile-131072); }
+    }
+  }
+}
+
+@keyframes spawn {
+  0% { transform: scale(0); }
+
+  100% { transform: scale(1); }
+}
+
+@keyframes merge {
+  0% { transform: scale(1); }
+
+  50% { transform: scale(1.1); }
+
+  100% { transform: scale(1); }
+}

@@ -1,0 +1,160 @@
+/*
+==========================================================================================
+  Variables
+==========================================================================================
+*/
+
+:root {
+  /*
+  ========================================================================================
+    Grid
+  ========================================================================================
+  */
+
+  --game-columns: 4;
+  --game-rows: 4;
+
+  /*
+  ========================================================================================
+    Spacing
+  ========================================================================================
+  */
+
+  --spacing: 1.0rem;
+
+  /*
+  ========================================================================================
+    Colors
+  ========================================================================================
+  */
+
+  --hue-base: 48;
+  --hue-secondary: 24;
+
+  --saturation-base: 96%;
+  --saturation-secondary: 12%;
+
+  --lightness-base: 48%;
+
+  --color-white: hsl(var(--hue-secondary), var(--saturation-secondary), 100%);
+  --color-lightestgray: hsl(var(--hue-secondary), var(--saturation-secondary), 87.5%);
+  --color-lightergray: hsl(var(--hue-secondary), var(--saturation-secondary), 75%);
+  --color-lightgray: hsl(var(--hue-secondary), var(--saturation-secondary), 62.5%);
+  --color-gray: hsl(var(--hue-secondary), var(--saturation-secondary), 50%);
+  --color-darkgray: hsl(var(--hue-secondary), var(--saturation-secondary), 37.5%);
+  --color-darkergray: hsl(var(--hue-secondary), var(--saturation-secondary), 25%);
+  --color-darkestgray: hsl(var(--hue-secondary), var(--saturation-secondary), 12.5%);
+  --color-black: hsl(var(--hue-secondary), var(--saturation-secondary), 0%);
+
+  --color-tile-2: hsl(12, 0%, 96%);
+  --color-tile-4: hsl(12, 12%, 90%);
+  --color-tile-8: hsl(12, 24%, 84%);
+  --color-tile-16: hsl(12, 36%, 78%);
+  --color-tile-32: hsl(12, 48%, 48%);
+  --color-tile-64: hsl(18, 60%, 48%);
+  --color-tile-128: hsl(24, 72%, 48%);
+  --color-tile-256: hsl(30, 84%, 48%);
+  --color-tile-512: hsl(36, 84%, 48%);
+  --color-tile-1024: hsl(42, 84%, 48%);
+  --color-tile-2048: hsl(48, 84%, 48%);
+  --color-tile-4096: hsl(108, 60%, 42%);
+  --color-tile-8192: hsl(168, 48%, 36%);
+  --color-tile-16384: hsl(228, 36%, 30%);
+  --color-tile-32768: hsl(288, 24%, 24%);
+  --color-tile-65536: hsl(348, 12%, 18%);
+  --color-tile-131072: hsl(0, 0%, 12%);
+
+  --color-base: var(--color-darkergray);
+  --color-link: var(--color-tile-256);
+  --color-background: hsl(var(--hue-secondary), var(--saturation-secondary), 100%);
+
+  /*
+  ========================================================================================
+    Borders
+  ========================================================================================
+  */
+
+  --border-base: 0.1rem solid hsla(0, 0%, 0%, 12.5%);
+
+  --border-radius-base: calc(var(--spacing) * 0.375);
+
+  /*
+  ========================================================================================
+    Fonts
+  ========================================================================================
+  */
+
+  --font-family-base: "";
+  --font-family-monospace: "SF Mono", monospace;
+  --font-family-fallback: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
+
+  /* font sizes */
+  --font-size-xxxxxl: calc(var(--spacing) * 3);
+  --font-size-xxxxl: calc(var(--spacing) * 2.5);
+  --font-size-xxxl: calc(var(--spacing) * 2);
+  --font-size-xxl: calc(var(--spacing) * 1.5);
+  --font-size-xl: calc(var(--spacing) * 1.25);
+  --font-size-large: calc(var(--spacing) * 1.125);
+  --font-size-base: calc(var(--spacing) * 1);
+  --font-size-small: calc(var(--spacing) * 0.875);
+  --font-size-smaller: calc(var(--spacing) * 0.75);
+
+  /* font weights */
+  --font-weight-book: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+
+  --font-weight-base: var(--font-weight-book);
+  --font-weight-heading: var(--font-weight-semibold);
+
+  /*
+  ========================================================================================
+    Line Heights
+  ========================================================================================
+  */
+
+  --line-height-base: 1.5;
+
+  /*
+  ========================================================================================
+    Letter Spacings
+  ========================================================================================
+  */
+
+  --letter-spacing-base: -0.018em;
+
+  /*
+  ========================================================================================
+    Widths
+  ========================================================================================
+  */
+
+  --width-min: 36rem;
+  --width-max: 192rem;
+}
+
+@media (min-width: 396px) {
+  :root { --spacing: 1.1rem; }
+}
+
+@media (min-width: 432px) {
+  :root { --spacing: 1.2rem; }
+}
+
+@media (min-width: 468px) {
+  :root { --spacing: 1.3rem; }
+}
+
+@media (min-width: 504px) {
+  :root { --spacing: 1.4rem; }
+}
+
+@media (min-width: 540px) {
+  :root { --spacing: 1.5rem; }
+}
+
+@media (min-width: 576px) {
+  :root { --spacing: 1.6rem; }
+}

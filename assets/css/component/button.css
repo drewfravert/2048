@@ -1,0 +1,43 @@
+/*
+==========================================================================================
+  Buttons
+==========================================================================================
+*/
+
+button,
+.button {
+  appearance: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75em 3em;
+  background-color: var(--color-tile-256);
+  border: none;
+  border-radius: var(--border-radius-base);
+  font-size: var(--font-size-smaller);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  line-height: inherit;
+  letter-spacing: var(--letter-spacing-base);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  user-select: auto;
+  cursor: pointer;
+
+  &:disabled { cursor: default; }
+
+  &:not(:disabled) {
+    &:hover { color: var(--color-white); }
+  }
+
+  &.button-fixed {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.button-large { font-size: var(--font-size-xl); }
+
+  &.button-wide { width: 100%; }
+}
