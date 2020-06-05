@@ -7,30 +7,42 @@
 @import "./global/variables.css";
 @import "./global/reset.css";
 @import "./global/root.css";
-@import "./global/utilities.css";
 @import "./global/typography.css";
+@import "./global/utilities.css";
+@import "./global/animations.css";
 
 /*
 ==========================================================================================
-  Modules
+  Layout
 ==========================================================================================
 */
 
-@import "./module/game.css";
-@import "./module/leaderboard.css";
+@import "./layout/body.css";
+@import "./layout/navigation.css";
+@import "./layout/main.css";
+@import "./layout/game.css";
+@import "./layout/settings.css";
+@import "./layout/leaderboard.css";
+@import "./layout/recap.css";
+@import "./layout/about.css";
+@import "./layout/privacy.css";
 
 /*
 ==========================================================================================
-  Components
+  Component
 ==========================================================================================
 */
 
+@import "./component/logo.css";
+@import "./component/scoreboard.css";
 @import "./component/button.css";
-@import "./component/rule.css";
+@import "./component/grid.css";
+@import "./component/tile.css";
+@import "./component/leader.css";
 
 /*
 ==========================================================================================
-  Miscellaneous
+  Vendor
 ==========================================================================================
 */
 

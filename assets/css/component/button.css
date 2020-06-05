@@ -1,35 +1,55 @@
 /*
 ==========================================================================================
-  Buttons
+  Button
 ==========================================================================================
 */
 
 button,
 .button {
-  appearance: none;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.75em 3em;
-  background-color: var(--color-tile-256);
-  border: none;
-  border-radius: var(--border-radius-base);
-  font-size: var(--font-size-smaller);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-white);
+  color: var(--color-link);
   line-height: inherit;
-  letter-spacing: var(--letter-spacing-base);
-  text-transform: uppercase;
-  text-decoration: none;
+  letter-spacing: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.09375em;
+  text-underline-offset: 0.09375em;
   white-space: nowrap;
-  position: relative;
-  user-select: auto;
   cursor: pointer;
 
-  &:disabled { cursor: default; }
+  &:disabled {
+    color: var(--color-lightestgray);
+    text-decoration: none;
+    cursor: default;
+  }
 
   &:not(:disabled) {
-    &:hover { color: var(--color-white); }
+    &:hover { color: var(--color-base); }
+  }
+
+  &.button-base {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7em 2.8em;
+    background-color: var(--color-tile-256);
+    border-radius: var(--border-radius-base);
+    font-size: var(--font-size-smaller);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white);
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    min-width: 9em;
+
+    &:disabled {
+      background-color: var(--color-lightestgray);
+      color: var(--color-lightergray);
+    }
+
+    &:not(:disabled) {
+      &:hover { color: var(--color-white); }
+    }
   }
 
   &.button-fixed {
@@ -37,7 +57,17 @@ button,
     padding-right: 0;
   }
 
-  &.button-large { font-size: var(--font-size-xl); }
+  &.button-large {
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    font-size: var(--font-size-large);
+  }
 
   &.button-wide { width: 100%; }
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
 }

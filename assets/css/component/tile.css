@@ -1,0 +1,139 @@
+/*
+==========================================================================================
+  Tile
+==========================================================================================
+*/
+
+.tile {
+  transition-duration: 100ms;
+  position: absolute;
+  width: calc((100% - (var(--spacing) * 3)) / 4);
+  height: calc((100% - (var(--spacing) * 3)) / 4);
+
+  &[data-column="1"] {
+    &[data-row="1"] { transform: translate(calc((100% + var(--spacing)) * 0), calc((100% + var(--spacing)) * 0)); }
+
+    &[data-row="2"] { transform: translate(calc((100% + var(--spacing)) * 0), calc((100% + var(--spacing)) * 1)); }
+
+    &[data-row="3"] { transform: translate(calc((100% + var(--spacing)) * 0), calc((100% + var(--spacing)) * 2)); }
+
+    &[data-row="4"] { transform: translate(calc((100% + var(--spacing)) * 0), calc((100% + var(--spacing)) * 3)); }
+  }
+
+  &[data-column="2"] {
+    &[data-row="1"] { transform: translate(calc((100% + var(--spacing)) * 1), calc((100% + var(--spacing)) * 0)); }
+
+    &[data-row="2"] { transform: translate(calc((100% + var(--spacing)) * 1), calc((100% + var(--spacing)) * 1)); }
+
+    &[data-row="3"] { transform: translate(calc((100% + var(--spacing)) * 1), calc((100% + var(--spacing)) * 2)); }
+
+    &[data-row="4"] { transform: translate(calc((100% + var(--spacing)) * 1), calc((100% + var(--spacing)) * 3)); }
+  }
+
+  &[data-column="3"] {
+    &[data-row="1"] { transform: translate(calc((100% + var(--spacing)) * 2), calc((100% + var(--spacing)) * 0)); }
+
+    &[data-row="2"] { transform: translate(calc((100% + var(--spacing)) * 2), calc((100% + var(--spacing)) * 1)); }
+
+    &[data-row="3"] { transform: translate(calc((100% + var(--spacing)) * 2), calc((100% + var(--spacing)) * 2)); }
+
+    &[data-row="4"] { transform: translate(calc((100% + var(--spacing)) * 2), calc((100% + var(--spacing)) * 3)); }
+  }
+
+  &[data-column="4"] {
+    &[data-row="1"] { transform: translate(calc((100% + var(--spacing)) * 3), calc((100% + var(--spacing)) * 0)); }
+
+    &[data-row="2"] { transform: translate(calc((100% + var(--spacing)) * 3), calc((100% + var(--spacing)) * 1)); }
+
+    &[data-row="3"] { transform: translate(calc((100% + var(--spacing)) * 3), calc((100% + var(--spacing)) * 2)); }
+
+    &[data-row="4"] { transform: translate(calc((100% + var(--spacing)) * 3), calc((100% + var(--spacing)) * 3)); }
+  }
+
+  .tile-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-darkergray);
+    border-radius: var(--border-radius-base);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-ultra);
+    color: var(--color-white);
+    line-height: 1;
+    width: 100%;
+    height: 100%;
+
+    &::after { content: attr(data-value); }
+
+    &[data-value="2"],
+    &[data-value="4"] {
+      color: var(--color-darkgray);
+    }
+
+    &[data-value="2"],
+    &[data-value="4"],
+    &[data-value="8"],
+    &[data-value="16"],
+    &[data-value="32"],
+    &[data-value="64"] {
+      font-size: var(--font-size-xxxxl);
+    }
+
+    &[data-value="128"],
+    &[data-value="256"],
+    &[data-value="512"] {
+      font-size: var(--font-size-xxxl);
+    }
+
+    &[data-value="1024"],
+    &[data-value="2048"],
+    &[data-value="4096"],
+    &[data-value="8192"] {
+      font-size: var(--font-size-xxl);
+    }
+
+    &[data-value="2"] { background-color: var(--color-tile-2); }
+
+    &[data-value="4"] { background-color: var(--color-tile-4); }
+
+    &[data-value="8"] { background-color: var(--color-tile-8); }
+
+    &[data-value="16"] { background-color: var(--color-tile-16); }
+
+    &[data-value="32"] { background-color: var(--color-tile-32); }
+
+    &[data-value="64"] { background-color: var(--color-tile-64); }
+
+    &[data-value="128"] { background-color: var(--color-tile-128); }
+
+    &[data-value="256"] { background-color: var(--color-tile-256); }
+
+    &[data-value="512"] { background-color: var(--color-tile-512); }
+
+    &[data-value="1024"] { background-color: var(--color-tile-1024); }
+
+    &[data-value="2048"] { background-color: var(--color-tile-2048); }
+
+    &[data-value="4096"] { background-color: var(--color-tile-4096); }
+
+    &[data-value="8192"] { background-color: var(--color-tile-8192); }
+
+    &[data-value="16384"] { background-color: var(--color-tile-16384); }
+
+    &[data-value="32768"] { background-color: var(--color-tile-32768); }
+
+    &[data-value="65536"] { background-color: var(--color-tile-65536); }
+
+    &[data-value="131072"] { background-color: var(--color-tile-131072); }
+
+    &.spawn,
+    &.merge {
+      animation-delay: 100ms;
+      animation-fill-mode: backwards;
+    }
+
+    &.spawn { animation-name: spawn; }
+
+    &.merge { animation-name: merge; }
+  }
+}

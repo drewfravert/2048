@@ -1,0 +1,30 @@
+<section class="data">
+  <table>
+    <tbody>
+      <tr>
+        <td class="text-nowrap" width="100%"><strong>Player Name</strong></td>
+        <td class="text-right text-nowrap"><%= link "Drew Fravert", to: "" %></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap" width="100%"><strong>Score</strong></td>
+        <td class="text-right text-nowrap">10,000,000</td>
+      </tr>
+      <tr>
+        <td class="text-nowrap" width="100%"><strong>Ranking</strong></td>
+        <td class="text-right text-nowrap">#1</td>
+      </tr>
+      <tr>
+        <td class="text-nowrap" width="100%"><strong>Total Moves</strong></td>
+        <td class="text-right text-nowrap">256</td>
+      </tr>
+      <tr>
+        <td class="text-nowrap" width="100%"><strong>Game Duration</strong></td>
+        <td class="text-right text-nowrap"><time datetime="<%= DateTime.utc_now() %>">2 hours, 6 minutes</time></td>
+      </tr>
+      <tr>
+        <td class="text-nowrap" width="100%"><strong>Date Played</strong></td>
+        <td class="text-right text-nowrap"><time datetime="<%= DateTime.utc_now() %>">1 January 2020</time></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

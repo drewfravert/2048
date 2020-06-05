@@ -1,0 +1,10 @@
+<article class="about text-contain">
+  <header class="header">
+    <h1 class="heading text-xxxl">About</h1>
+  </header>
+  <section class="section">
+    <p>This is a port of the game <%= link "2048", to: "https://en.wikipedia.org/wiki/2048_(video_game)" %> by <%= link "Gabriele Cirulli", to: "https://gabrielecirulli.com/" %>, originally <%= link "built with JavaScript", to: "https://github.com/gabrielecirulli/2048" %>.</p>
+    <p>This port is a personal experiment to see how far I could push <%= link "Elixir", to: "https://hexdocs.pm/elixir" %>, <%= link "Phoenix", to: "https://hexdocs.pm/phoenix" %> and, specifically, <%= link "LiveView", to: "https://hexdocs.pm/phoenix_live_view" %> to manage an interactive game while using only minimal JavaScript and CSS.</p>
+    <p>If you'd like to see how I built this, you can view the <%= link "source code here", to: "https://github.com/drewfravert/2048" %>. If you'd like to learn more about me or reach out, you can find me at <%= link "https://drewfravert.com", to: "https://drewfravert.com" %>.
+  </section>
+</article>

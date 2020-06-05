@@ -1,0 +1,42 @@
+<article class="leaderboard">
+  <header class="header">
+    <h1 class="heading text-xxxl">Leaderboard</h1>
+    <p>Below is a list of every individual that has played this instance of 2048 since the application was deployed. Data is not stored in a traditional database, but instead in a long running process managed by Elixir.</p>
+  </header>
+  <section class="personal">
+    <h2 class="text-small text-bold text-uppercase">Personal Best</h2>
+    <%= link to: Routes.page_path(@conn, :game, "123"), class: "leader", data_rank: "1" do %>
+      <span class="name">Drew Fravert</span>
+      <span class="score">10,000,000</span>
+    <% end %>
+  </section>
+  <section class="overall">
+    <h2 class="text-small text-bold text-uppercase">Overall Rankings (1 Player)</h2>
+    <div class="leaders">
+      <%= link to: Routes.page_path(@conn, :game, "123"), class: "leader" do %>
+        <span class="name">Drew Fravert</span>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game, "123"), class: "leader" do %>
+        <span class="name">Drew Fravert</span>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game, "123"), class: "leader" do %>
+        <span class="name">Drew Fravert</span>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game, "123"), class: "leader" do %>
+        <span class="name">Drew Fravert</span>
+        <span class="score">10,000,000</span>
+      <% end %>
+      <%= link to: Routes.page_path(@conn, :game, "123"), class: "leader" do %>
+        <span class="name">Drew Fravert</span>
+        <span class="score">10,000,000</span>
+      <% end %>
+    </div>
+  </section>
+  <div class="pagination flex align-center gx-3">
+    <%= content_tag :button, "← Previous", type: "button", disabled: true %>
+    <%= content_tag :button, "Next →", type: "button", disabled: true %>
+  </div>
+</article>

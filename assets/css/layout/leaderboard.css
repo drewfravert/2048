@@ -1,0 +1,26 @@
+/*
+==========================================================================================
+  Leaderboard
+==========================================================================================
+*/
+
+.leaderboard {
+  display: grid;
+  grid-template-areas:
+    "header    "
+    "personal  "
+    "overall   "
+    ".         "
+    "pagination";
+  grid-template-rows: auto auto auto 1fr auto;
+  gap: var(--spacing);
+  align-content: start;
+
+  .header { grid-area: header; }
+
+  .personal { grid-area: personal; }
+
+  .overall { grid-area: overall; }
+
+  .pagination { grid-area: pagination; }
+}

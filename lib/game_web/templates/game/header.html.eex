@@ -1,0 +1,7 @@
+<header class="header">
+  <div class="logo"></div>
+  <div class="scoreboard current" data-title="Score" data-score="0"></div>
+  <div class="scoreboard best" data-title="Best" data-score="0"></div>
+  <%= link "New Game", to: Routes.page_path(@conn, :index), class: "new button button-base button-fixed" %>
+  <%= link "Leaderboard", to: Routes.page_path(@conn, :leaderboard), class: "leaderboard button button-base button-fixed" %>
+</header>

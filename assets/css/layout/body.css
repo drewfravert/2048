@@ -1,0 +1,25 @@
+/*
+==========================================================================================
+  Body
+==========================================================================================
+*/
+
+body {
+  display: grid;
+  grid-template-areas:
+    ". .      ."
+    ". main   ."
+    ". .      .";
+  grid-template-columns: 1fr minmax(calc(100vw - (var(--spacing) * 4)), auto) 1fr;
+  grid-template-rows: 1fr minmax(calc(100vh - (var(--spacing) * 4)), auto) 1fr;
+  gap: calc(var(--spacing) * 2);
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  position: relative;
+  min-width: var(--width-min);
+
+  @media (min-width: 720px) and (min-aspect-ratio: 9/8) {
+    min-width: calc(var(--width-min) * 2);
+  }
+}

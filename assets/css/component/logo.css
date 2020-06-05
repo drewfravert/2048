@@ -1,0 +1,23 @@
+/*
+==========================================================================================
+  Logo
+==========================================================================================
+*/
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-tile-2048);
+  border-radius: var(--border-radius-base);
+  font-size: var(--font-size-smaller);
+  width: 10em;
+  height: 10em;
+
+  &::after {
+    content: "2048";
+    font-size: 3em;
+    font-weight: var(--font-weight-black);
+    color: var(--color-white);
+  }
+}

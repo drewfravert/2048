@@ -1,0 +1,3 @@
+<section class="share flex justify-center align-center">
+  <%= content_tag :button, "Share", type: "button", class: "button-base button-large button-wide", disabled: true %>
+</section>

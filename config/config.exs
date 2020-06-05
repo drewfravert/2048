@@ -8,11 +8,11 @@
 use Mix.Config
 
 # Configures the endpoint
-config :ex2048, Ex2048Web.Endpoint,
+config :game, GameWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "Ij4ZjYsCsg/4MPPuOT6RS1VZ65SiVlz4/SDva69nJKzOqHbdqKWFvv7CKuj+31Au",
-  render_errors: [view: Ex2048Web.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: Ex2048.PubSub,
+  render_errors: [view: GameWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: Game.PubSub,
   live_view: [signing_salt: "vvgSf5yZ"]
 
 # Configures Elixir's Logger

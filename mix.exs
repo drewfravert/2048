@@ -1,9 +1,9 @@
-defmodule Ex2048.MixProject do
+defmodule Game.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :ex2048,
+      app: :game,
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule Ex2048.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Ex2048.Application, []},
+      mod: {Game.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -47,10 +47,9 @@ defmodule Ex2048.MixProject do
     ]
   end
 
-  # Aliases are shortcuts or tasks specific to the current project.
-  # For example, to install project dependencies and perform other setup tasks, run:
+  # Aliases are shortcuts or tasks specific to the current project. For example, to install project dependencies and perform other setup tasks, run:
   #
-  #     $ mix setup
+  #   $ mix setup
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do

@@ -1,0 +1,25 @@
+<section class="grid">
+  <div class="tiles">
+    <div class="tile animates" data-column="4" data-row="4">
+      <div class="tile-content animates spawn" data-value="2048"></div>
+    </div>
+  </div>
+  <div class="cells">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+</section>

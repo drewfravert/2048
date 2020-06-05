@@ -11,8 +11,9 @@
   ========================================================================================
   */
 
-  --game-columns: 4;
-  --game-rows: 4;
+  --grid-width: calc(var(--spacing) * 32);
+  --grid-columns: 4;
+  --grid-rows: 4;
 
   /*
   ========================================================================================
@@ -28,45 +29,40 @@
   ========================================================================================
   */
 
-  --hue-base: 48;
-  --hue-secondary: 24;
+  --hue-base: 24;
+  --saturation-base: 6%;
 
-  --saturation-base: 96%;
-  --saturation-secondary: 12%;
-
-  --lightness-base: 48%;
-
-  --color-white: hsl(var(--hue-secondary), var(--saturation-secondary), 100%);
-  --color-lightestgray: hsl(var(--hue-secondary), var(--saturation-secondary), 87.5%);
-  --color-lightergray: hsl(var(--hue-secondary), var(--saturation-secondary), 75%);
-  --color-lightgray: hsl(var(--hue-secondary), var(--saturation-secondary), 62.5%);
-  --color-gray: hsl(var(--hue-secondary), var(--saturation-secondary), 50%);
-  --color-darkgray: hsl(var(--hue-secondary), var(--saturation-secondary), 37.5%);
-  --color-darkergray: hsl(var(--hue-secondary), var(--saturation-secondary), 25%);
-  --color-darkestgray: hsl(var(--hue-secondary), var(--saturation-secondary), 12.5%);
-  --color-black: hsl(var(--hue-secondary), var(--saturation-secondary), 0%);
+  --color-white: hsl(var(--hue-base), var(--saturation-base), 100%);
+  --color-lightestgray: hsl(var(--hue-base), var(--saturation-base), 87.5%);
+  --color-lightergray: hsl(var(--hue-base), var(--saturation-base), 75%);
+  --color-lightgray: hsl(var(--hue-base), var(--saturation-base), 62.5%);
+  --color-gray: hsl(var(--hue-base), var(--saturation-base), 50%);
+  --color-darkgray: hsl(var(--hue-base), var(--saturation-base), 37.5%);
+  --color-darkergray: hsl(var(--hue-base), var(--saturation-base), 25%);
+  --color-darkestgray: hsl(var(--hue-base), var(--saturation-base), 12.5%);
+  --color-black: hsl(var(--hue-base), var(--saturation-base), 0%);
 
   --color-tile-2: hsl(12, 0%, 96%);
-  --color-tile-4: hsl(12, 12%, 90%);
-  --color-tile-8: hsl(12, 24%, 84%);
-  --color-tile-16: hsl(12, 36%, 78%);
-  --color-tile-32: hsl(12, 48%, 48%);
+  --color-tile-4: hsl(12, 12%, 84%);
+  --color-tile-8: hsl(12, 24%, 72%);
+  --color-tile-16: hsl(18, 36%, 60%);
+  --color-tile-32: hsl(18, 48%, 54%);
   --color-tile-64: hsl(18, 60%, 48%);
   --color-tile-128: hsl(24, 72%, 48%);
   --color-tile-256: hsl(30, 84%, 48%);
-  --color-tile-512: hsl(36, 84%, 48%);
-  --color-tile-1024: hsl(42, 84%, 48%);
-  --color-tile-2048: hsl(48, 84%, 48%);
-  --color-tile-4096: hsl(108, 60%, 42%);
-  --color-tile-8192: hsl(168, 48%, 36%);
-  --color-tile-16384: hsl(228, 36%, 30%);
-  --color-tile-32768: hsl(288, 24%, 24%);
-  --color-tile-65536: hsl(348, 12%, 18%);
-  --color-tile-131072: hsl(0, 0%, 12%);
+  --color-tile-512: hsl(36, 96%, 48%);
+  --color-tile-1024: hsl(42, 96%, 48%);
+  --color-tile-2048: hsl(48, 96%, 48%);
+  --color-tile-4096: hsl(96, 96%, 36%);
+  --color-tile-8192: hsl(144, 96%, 30%);
+  --color-tile-16384: hsl(192, 96%, 24%);
+  --color-tile-32768: hsl(240, 96%, 18%);
+  --color-tile-65536: hsl(288, 96%, 12%);
+  --color-tile-131072: hsl(336, 96%, 6%);
 
   --color-base: var(--color-darkergray);
   --color-link: var(--color-tile-256);
-  --color-background: hsl(var(--hue-secondary), var(--saturation-secondary), 100%);
+  --color-background: hsl(var(--hue-base), var(--saturation-base), 100%);
 
   /*
   ========================================================================================
@@ -89,15 +85,14 @@
   --font-family-fallback: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
 
   /* font sizes */
-  --font-size-xxxxxl: calc(var(--spacing) * 3);
-  --font-size-xxxxl: calc(var(--spacing) * 2.5);
-  --font-size-xxxl: calc(var(--spacing) * 2);
-  --font-size-xxl: calc(var(--spacing) * 1.5);
-  --font-size-xl: calc(var(--spacing) * 1.25);
-  --font-size-large: calc(var(--spacing) * 1.125);
-  --font-size-base: calc(var(--spacing) * 1);
-  --font-size-small: calc(var(--spacing) * 0.875);
-  --font-size-smaller: calc(var(--spacing) * 0.75);
+  --font-size-xxxxl: calc(var(--spacing) * 3);
+  --font-size-xxxl: calc(var(--spacing) * 2.4);
+  --font-size-xxl: calc(var(--spacing) * 2);
+  --font-size-xl: calc(var(--spacing) * 1.8);
+  --font-size-large: calc(var(--spacing) * 1.6);
+  --font-size-base: calc(var(--spacing) * 1.4);
+  --font-size-small: calc(var(--spacing) * 1.2);
+  --font-size-smaller: calc(var(--spacing) * 1);
 
   /* font weights */
   --font-weight-book: 400;
@@ -105,9 +100,10 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-black: 800;
+  --font-weight-ultra: 900;
 
   --font-weight-base: var(--font-weight-book);
-  --font-weight-heading: var(--font-weight-semibold);
+  --font-weight-heading: var(--font-weight-black);
 
   /*
   ========================================================================================
@@ -123,7 +119,7 @@
   ========================================================================================
   */
 
-  --letter-spacing-base: -0.018em;
+  --letter-spacing-base: -0.036em;
 
   /*
   ========================================================================================
@@ -131,30 +127,55 @@
   ========================================================================================
   */
 
-  --width-min: 36rem;
-  --width-max: 192rem;
+  --width-min: calc(var(--spacing) * 36);
 }
 
-@media (min-width: 396px) {
+@media (min-width: 396px) and (min-height: 704px),
+       (min-height: 396px) and (min-width: 792px) {
   :root { --spacing: 1.1rem; }
 }
 
-@media (min-width: 432px) {
+@media (min-width: 432px) and (min-height: 768px),
+       (min-height: 432px) and (min-width: 864px) {
   :root { --spacing: 1.2rem; }
 }
 
-@media (min-width: 468px) {
+@media (min-width: 468px) and (min-height: 832px),
+       (min-height: 468px) and (min-width: 936px) {
   :root { --spacing: 1.3rem; }
 }
 
-@media (min-width: 504px) {
+@media (min-width: 504px) and (min-height: 896px),
+       (min-height: 504px) and (min-width: 1008px) {
   :root { --spacing: 1.4rem; }
 }
 
-@media (min-width: 540px) {
+@media (min-width: 540px) and (min-height: 960px),
+       (min-height: 540px) and (min-width: 1080px) {
   :root { --spacing: 1.5rem; }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 576px) and (min-height: 1024px),
+       (min-height: 576px) and (min-width: 1152px) {
   :root { --spacing: 1.6rem; }
+}
+
+@media (min-width: 612px) and (min-height: 1088px),
+       (min-height: 612px) and (min-width: 1224px) {
+  :root { --spacing: 1.7rem; }
+}
+
+@media (min-width: 648px) and (min-height: 1152px),
+       (min-height: 648px) and (min-width: 1296px) {
+  :root { --spacing: 1.8rem; }
+}
+
+@media (min-width: 684px) and (min-height: 1216px),
+       (min-height: 684px) and (min-width: 1368px) {
+  :root { --spacing: 1.9rem; }
+}
+
+@media (min-width: 720px) and (min-height: 1280px),
+       (min-height: 720px) and (min-width: 1440px) {
+  :root { --spacing: 2.0rem; }
 }

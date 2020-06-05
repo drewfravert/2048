@@ -4,7 +4,15 @@
 ==========================================================================================
 */
 
+.heading {
+  font-weight: var(--font-weight-heading);
+  line-height: 1;
+
+  &:not(:last-child) { margin-bottom: 0.5em; }
+}
+
 a {
+  display: inline-block;
   color: var(--color-link);
   text-decoration-line: underline;
   text-decoration-color: currentColor;
@@ -47,4 +55,10 @@ sup {
   sup { font-variant-position: super; }
 }
 
-p { margin-bottom: 1em; }
+p, ul, ol, table { margin-bottom: 1em; }
+
+ul, ol {
+  list-style-position: inside;
+
+  &.no-list-style { list-style-type: none; }
+}

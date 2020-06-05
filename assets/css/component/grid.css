@@ -1,0 +1,39 @@
+/*
+==========================================================================================
+  Grid
+==========================================================================================
+*/
+
+.grid {
+  display: grid;
+  padding: var(--spacing);
+  background-color: var(--color-lightgray);
+  border-radius: calc(var(--border-radius-base) * 2);
+  position: relative;
+  width: var(--grid-width);
+  height: var(--grid-width);
+
+  .tiles {
+    position: absolute;
+    top: var(--spacing);
+    left: var(--spacing);
+    right: var(--spacing);
+    bottom: var(--spacing);
+    z-index: 2;
+  }
+
+  .cells {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    gap: var(--spacing);
+    position: relative;
+    z-index: 1;
+
+    .cell {
+      display: grid;
+      background-color: var(--color-lightergray);
+      border-radius: var(--border-radius-base);
+    }
+  }
+}

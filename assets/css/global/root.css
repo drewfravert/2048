@@ -16,15 +16,6 @@ html {
 }
 
 body {
-  display: grid;
-  grid-template-areas:
-    ". .      ."
-    ". main   ."
-    ". .      .";
-  grid-template-columns: 1fr calc(var(--spacing) * 32) 1fr;
-  gap: calc(var(--spacing) * 2);
-  align-content: center;
-  margin: 0 auto;
   background-color: var(--color-background);
   font-family: var(--font-family-base), var(--font-family-fallback);
   font-size: var(--font-size-base);
@@ -32,9 +23,4 @@ body {
   color: var(--color-base);
   line-height: var(--line-height-base);
   letter-spacing: var(--letter-spacing-base);
-  position: relative;
-  min-width: var(--width-min);
-  max-width: var(--width-max);
 }
-
-.main { grid-area: main; }

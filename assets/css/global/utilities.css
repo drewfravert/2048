@@ -20,6 +20,10 @@
 
 .flex { display: flex !important; }
 
+.flex-wrap { flex-wrap: wrap !important; }
+
+.flex-nowrap { flex-wrap: nowrap !important; }
+
 .inline-flex { display: inline-flex !important; }
 
 .justify-start { justify-content: start !important; }
@@ -59,6 +63,81 @@
 .valign-bottom { vertical-align: bottom !important; }
 
 .valign-baseline { vertical-align: baseline !important; }
+
+/*
+==========================================================================================
+  Gaps
+==========================================================================================
+*/
+
+/* gap all */
+.g-0 { gap: 0.0em !important; }
+
+.g-1 { gap: 0.25em !important; }
+
+.g-2 { gap: 0.5em !important; }
+
+.g-3 { gap: 0.75em !important; }
+
+.g-4 { gap: 1em !important; }
+
+.g-6 { gap: 1.5em !important; }
+
+.g-8 { gap: 2em !important; }
+
+.g-10 { gap: 2.5em !important; }
+
+.g-12 { gap: 3em !important; }
+
+.g-16 { gap: 4em !important; }
+
+.g-20 { gap: 5em !important; }
+
+/* gap column */
+.gx-0 { column-gap: 0.0em !important; }
+
+.gx-1 { column-gap: 0.25em !important; }
+
+.gx-2 { column-gap: 0.5em !important; }
+
+.gx-3 { column-gap: 0.75em !important; }
+
+.gx-4 { column-gap: 1em !important; }
+
+.gx-6 { column-gap: 1.5em !important; }
+
+.gx-8 { column-gap: 2em !important; }
+
+.gx-10 { column-gap: 2.5em !important; }
+
+.gx-12 { column-gap: 3em !important; }
+
+.gx-16 { column-gap: 4em !important; }
+
+.gx-20 { column-gap: 5em !important; }
+
+/* gap row */
+.gy-0 { row-gap: 0.0em !important; }
+
+.gy-1 { row-gap: 0.25em !important; }
+
+.gy-2 { row-gap: 0.5em !important; }
+
+.gy-3 { row-gap: 0.75em !important; }
+
+.gy-4 { row-gap: 1em !important; }
+
+.gy-6 { row-gap: 1.5em !important; }
+
+.gy-8 { row-gap: 2em !important; }
+
+.gy-10 { row-gap: 2.5em !important; }
+
+.gy-12 { row-gap: 3em !important; }
+
+.gy-16 { row-gap: 4em !important; }
+
+.gy-20 { row-gap: 5em !important; }
 
 /*
 ==========================================================================================
@@ -534,8 +613,6 @@
 ==========================================================================================
 */
 
-.text-xxxxxl { font-size: var(--font-size-xxxxxl) !important; }
-
 .text-xxxxl { font-size: var(--font-size-xxxxl) !important; }
 
 .text-xxxl { font-size: var(--font-size-xxxl) !important; }
@@ -568,7 +645,7 @@
 
 .text-lowercase { text-transform: lowercase !important; }
 
-.text-contain { max-width: 50em !important; }
+.text-contain { max-width: 40em !important; }
 
 .text-left { text-align: left !important; }
 

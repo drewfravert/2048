@@ -1,0 +1,35 @@
+/*
+==========================================================================================
+  Scoreboard
+==========================================================================================
+*/
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0 3.5em;
+  background-color: var(--color-lightergray);
+  border-radius: var(--border-radius-base);
+  font-size: var(--font-size-smaller);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  width: 9em;
+  height: 9em;
+
+  &::before {
+    content: attr(data-title);
+    font-size: 1.5em;
+    color: var(--color-darkgray);
+    text-transform: uppercase;
+  }
+
+  &::after {
+    content: attr(data-score);
+    font-size: 2em;
+    color: var(--color-white);
+  }
+}

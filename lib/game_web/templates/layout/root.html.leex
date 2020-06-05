@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <%= csrf_meta_tag() %>
+    <%= live_title_tag assigns[:page_title] || "Game" %>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>" phx-track-static>
+    <script defer src="<%= Routes.static_path(@conn, "/js/app.js") %>" phx-track-static></script>
+  </head>
+  <body>
+    <%# render GameWeb.LayoutView, "navigation.html", conn: @conn %>
+    <%= @inner_content %>
+  </body>
+</html>

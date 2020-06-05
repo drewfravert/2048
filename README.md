@@ -1,4 +1,4 @@
-# Ex2048
+# 2048
 
 To start your Phoenix server:
 
