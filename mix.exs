@@ -14,9 +14,7 @@ defmodule Game.MixProject do
     ]
   end
 
-  # Configuration for the OTP application.
-  #
-  # Type `mix help compile.app` for more information.
+  # Configuration for the OTP application. Type `mix help compile.app` for more information.
   def application do
     [
       mod: {Game.Application, []},
@@ -28,9 +26,7 @@ defmodule Game.MixProject do
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
-  # Specifies your project dependencies.
-  #
-  # Type `mix help deps` for examples and options.
+  # Specifies your project dependencies. Type `mix help deps` for examples and options.
   defp deps do
     [
       {:phoenix, "~> 1.5.3"},
@@ -54,7 +50,7 @@ defmodule Game.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "cmd npm install --prefix assets"]
+      setup: ["deps.get", "yarn --cwd ./assets install"]
     ]
   end
 end

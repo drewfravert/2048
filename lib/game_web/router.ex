@@ -22,7 +22,6 @@ defmodule GameWeb.Router do
     get "/game/:id", PageController, :game
     get "/leaderboard", PageController, :leaderboard
     get "/privacy", PageController, :privacy
-    get "/settings", PageController, :settings
     get "/watch", PageController, :watch
   end
 

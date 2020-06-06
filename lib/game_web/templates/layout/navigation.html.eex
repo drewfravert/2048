@@ -1,7 +1,6 @@
 <nav class="navigation" role="navigation">
-  <ul class="flex align-center flex-wrap gx-3 text-small no-list-style">
+  <ul class="flex align-center flex-wrap gx-4 text-small text-medium text-uppercase no-list-style">
     <li><%= link "Play", to: Routes.page_path(@conn, :index) %></li>
-    <li><%= link "Settings", to: Routes.page_path(@conn, :settings) %></li>
     <li><%= link "Leaderboard", to: Routes.page_path(@conn, :leaderboard) %></li>
     <li><%= link "Watch", to: Routes.page_path(@conn, :watch) %></li>
     <li><%= link "About", to: Routes.page_path(@conn, :about) %></li>

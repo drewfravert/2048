@@ -1,1 +1,3 @@
-<p><strong>How to Play:</strong> Use the arrow keys to move the tiles. When two tiles with the same number touch, they merge into one. The game is over when the board fills up...</p>
+<section class="instructions text-small">
+  <p><strong>How to Play:</strong> Use the arrow keys to move the tiles. When two tiles with the same number touch, they merge into one. The game is over when the board fills up...</p>
+</section>

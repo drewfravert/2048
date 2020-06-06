@@ -1,4 +1,0 @@
-<footer class="footer text-small">
-  <%= render GameWeb.GameView, "instructions.html" %>
-  <%= render GameWeb.LayoutView, "navigation.html", conn: @conn %>
-</footer>

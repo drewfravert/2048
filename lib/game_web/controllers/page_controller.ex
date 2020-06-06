@@ -21,10 +21,6 @@ defmodule GameWeb.PageController do
     render(conn, "privacy.html")
   end
 
-  def settings(conn, _params) do
-    render(conn, "settings.html")
-  end
-
   def watch(conn, _params) do
     render(conn, "watch.html")
   end

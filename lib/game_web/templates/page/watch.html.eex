@@ -1,6 +1,7 @@
-<article class="settings">
-  <header class="header">
-    <h1 class="heading text-xxxl">Ongoing Games</h1>
+<article class="page">
+  <%= render GameWeb.LayoutView, "navigation.html", conn: @conn %>
+  <header>
+    <h1 class="heading text-xxxl">Current Games</h1>
   </header>
-  <section class="section"></section>
+  <section></section>
 </article>

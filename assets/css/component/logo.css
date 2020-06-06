@@ -11,6 +11,7 @@
   background-color: var(--color-tile-2048);
   border-radius: var(--border-radius-base);
   font-size: var(--font-size-smaller);
+  text-decoration: none;
   width: 10em;
   height: 10em;
 

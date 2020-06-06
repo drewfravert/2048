@@ -18,14 +18,9 @@
 */
 
 @import "./layout/body.css";
-@import "./layout/navigation.css";
 @import "./layout/main.css";
 @import "./layout/game.css";
-@import "./layout/settings.css";
-@import "./layout/leaderboard.css";
-@import "./layout/recap.css";
-@import "./layout/about.css";
-@import "./layout/privacy.css";
+@import "./layout/page.css";
 
 /*
 ==========================================================================================

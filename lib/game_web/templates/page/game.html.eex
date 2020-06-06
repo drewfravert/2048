@@ -1,8 +1,8 @@
-<article class="recap">
+<article class="game overview">
+  <%= render GameWeb.LayoutView, "navigation.html", conn: @conn %>
   <header class="header">
-    <h1 class="heading text-xxxl">Game Recap</h1>
+    <h1 class="heading text-xxxl">Game Overview</h1>
   </header>
   <%= render GameWeb.GameView, "data.html" %>
   <%= render GameWeb.GameView, "grid.html" %>
-  <%= render GameWeb.GlobalView, "share.html" %>
 </article>

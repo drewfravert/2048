@@ -4,7 +4,6 @@
 ==========================================================================================
 */
 
-import b from "../global/browser.ts";
 import c from "../global/constants.ts";
 import { throttle } from "lodash";
 import Helpers from "../global/helpers.ts";
@@ -15,6 +14,11 @@ import Actuator from "../module/actuator.ts";
   Constants
 ==========================================================================================
 */
+
+const ANIMATION_DURATION = parseInt(
+  getComputedStyle(document.documentElement)
+    .getPropertyValue("--animation-duration-base").replace("ms", ""),
+);
 
 /*
 ==========================================================================================
@@ -44,13 +48,10 @@ const bindInputs = () => {
   const keys = [c.key.up, c.key.down, c.key.left, c.key.right];
   const handler = (direction) => Actuator.move(direction);
 
-  Helpers.bindKeys(keys, throttle(handler, 100, { trailing: false }));
-};
-
-const postInput = (input) => {
-  const config = { method: b.request.post, body: input };
-
-  fetch("/move", config).then((response) => Actuator.move(response));
+  Helpers.bindKeys(
+    keys,
+    throttle(handler, ANIMATION_DURATION, { trailing: false }),
+  );
 };
 
 /*
