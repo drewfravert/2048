@@ -1,9 +1,9 @@
 <nav class="navigation" role="navigation">
   <ul class="flex align-center flex-wrap gx-4 text-small text-medium text-uppercase no-list-style">
-    <li><%= link "Play", to: Routes.page_path(@conn, :index) %></li>
-    <li><%= link "Leaderboard", to: Routes.page_path(@conn, :leaderboard) %></li>
-    <li><%= link "Watch", to: Routes.page_path(@conn, :watch) %></li>
-    <li><%= link "About", to: Routes.page_path(@conn, :about) %></li>
-    <li><%= link "Privacy", to: Routes.page_path(@conn, :privacy) %></li>
+    <li><%= route = Routes.page_path(@conn, :index); link "Play", to: route, class: active_path?(@conn, route) %></li>
+    <li><%= route = Routes.page_path(@conn, :leaderboard); link "Leaderboard", to: route, class: active_path?(@conn, route) %></li>
+    <li><%= route = Routes.page_path(@conn, :watch); link "Watch", to: route, class: active_path?(@conn, route) %></li>
+    <li><%= route = Routes.page_path(@conn, :about); link "About", to: route, class: active_path?(@conn, route) %></li>
+    <li><%= route = Routes.page_path(@conn, :privacy); link "Privacy", to: route, class: active_path?(@conn, route) %></li>
   </ul>
 </nav>

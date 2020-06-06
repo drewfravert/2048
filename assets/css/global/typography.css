@@ -15,7 +15,15 @@ a {
   color: var(--color-link);
   text-decoration: none;
 
-  &:hover { color: var(--color-base); }
+  &:hover, &.active { color: var(--color-base); }
+
+  &.active {
+    text-decoration-line: underline;
+    text-decoration-color: currentColor;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0.125em;
+    text-underline-offset: 0.125em;
+}
 }
 
 strong, b { font-weight: var(--font-weight-bold); }
@@ -26,8 +34,8 @@ u {
   text-decoration-line: underline;
   text-decoration-color: currentColor;
   text-decoration-style: solid;
-  text-decoration-thickness: 0.09375em;
-  text-underline-offset: 0.09375em;
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 0.125em;
 }
 
 small { font-size: var(--font-size-small); }

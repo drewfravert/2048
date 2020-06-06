@@ -2,8 +2,9 @@
   <%= render GameWeb.LayoutView, "navigation.html", conn: @conn %>
   <header>
     <h1 class="heading text-xxxl">About</h1>
-    <p>This is a port of the game <%= link "2048", to: "https://en.wikipedia.org/wiki/2048_(video_game)" %> by <%= link "Gabriele Cirulli", to: "https://gabrielecirulli.com/" %>, originally <%= link "built with JavaScript", to: "https://github.com/gabrielecirulli/2048" %>.</p>
-    <p>This port is a personal experiment to see how far I could push <%= link "Elixir", to: "https://hexdocs.pm/elixir" %>, <%= link "Phoenix", to: "https://hexdocs.pm/phoenix" %> and, specifically, <%= link "LiveView", to: "https://hexdocs.pm/phoenix_live_view" %> to manage an interactive game while using only minimal JavaScript.</p>
-    <p>If you'd like to see how I built this, you can view the <%= link "source code here", to: "https://github.com/drewfravert/2048" %>. If you'd like to learn more about me or reach out, you can find me at <%= link "https://drewfravert.com", to: "https://drewfravert.com" %>.</p>
+    <p>This is a port of the game <%= link "2048", to: "https://en.wikipedia.org/wiki/2048_(video_game)" %> by <%= link "Gabriele Cirulli", to: "https://gabrielecirulli.com/" %>.</p>
+    <p>This is a personal experiment to see how far I could push <%= link "Elixir", to: "https://hexdocs.pm/elixir" %>, <%= link "Phoenix", to: "https://hexdocs.pm/phoenix" %> and, specifically, <%= link "LiveView", to: "https://hexdocs.pm/phoenix_live_view" %> to manage an interactive game while using only the minimum viable JavaScript.</p>
+    <p>If you'd like to see how I built this, you can view the <%= link "source code here", to: "https://github.com/drewfravert/2048" %>.</p>
+    <p>If you'd like to learn more about me or reach out, you can find me at <%= link "https://drewfravert.com", to: "https://drewfravert.com" %>.</p>
   </header>
 </article>

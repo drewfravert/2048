@@ -85,6 +85,8 @@ defmodule GameWeb do
       import GameWeb.ErrorHelpers
       import GameWeb.Gettext
       alias GameWeb.Router.Helpers, as: Routes
+
+      import GameWeb.TemplateHelpers
     end
   end
 
