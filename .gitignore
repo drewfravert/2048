@@ -1,11 +1,10 @@
+*.ez
+erl_crash.dump
+game-*.tar
+/.fetch
 /_build/
+/assets/node_modules/
 /cover/
 /deps/
 /doc/
-/.fetch
-erl_crash.dump
-*.ez
-game-*.tar
-npm-debug.log
-/assets/node_modules/
 /priv/static/
