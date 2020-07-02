@@ -1,1 +1,5 @@
-<div class="message text-large text-semibold">Welcome back, <%= @game.player.name %>. Your next goal is the 8192 tile.</div>
+<%= if @game.player.name === "Anonymous" do %>
+  <div class="message text-large text-semibold"><%= @message %></div>
+<% else %>
+  <div class="message text-large text-semibold">Welcome back, <%= @game.player.name %>. Your next goal is the <%= @game.player.best.tile %> tile.</div>
+<% end %>

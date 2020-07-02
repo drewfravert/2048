@@ -102,7 +102,8 @@ defmodule Game.Tile do
   defp random_id() do
     make_ref()
     |> inspect()
-    |> String.replace(["#", ".", "<", ">", "Reference"], "")
+    |> String.replace(["#", ".", "<", ">"], "")
+    |> String.replace("Reference", "T")
     |> String.to_atom()
   end
 

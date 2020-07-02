@@ -6,21 +6,19 @@ defmodule Game do
   # Configuration
   # ======================================================================================
 
-  alias Game.{Grid, Player}
+  alias Game.{Actuator, Grid, Player}
 
   # ======================================================================================
   # Attributes
   # ======================================================================================
 
-  @enforce_keys [:finished, :grid, :id, :player, :score, :started, :state]
-
-  @states [:initialized, :playing, :won, :continue, :lost]
+  @enforce_keys [:finished, :grid, :id, :player, :score, :started, :status, :tile]
 
   # ======================================================================================
   # Schema
   # ======================================================================================
 
-  defstruct [:finished, :grid, :id, :player, :score, :started, :state]
+  defstruct [:finished, :grid, :id, :player, :score, :started, :status, :tile]
 
   # ======================================================================================
   # Public Functions
@@ -29,12 +27,16 @@ defmodule Game do
   def new() do
     %Game{
       finished: nil,
-      grid: Grid.new(),
+      grid:
+        Grid.new()
+        |> Actuator.spawn_tile()
+        |> Actuator.spawn_tile(),
       id: random_id(),
-      player: Player.new("Drew"),
+      player: Player.new(),
       score: 0,
       started: DateTime.now!("Etc/UTC"),
-      state: :initialized
+      status: :initialized,
+      tile: 2
     }
   end
 
@@ -46,10 +48,11 @@ defmodule Game do
   # Private Functions
   # ======================================================================================
 
-  def random_id() do
+  defp random_id() do
     make_ref()
     |> inspect()
-    |> String.replace(["#", ".", "<", ">", "Reference"], "")
+    |> String.replace(["#", ".", "<", ">"], "")
+    |> String.replace("Reference", "G")
     |> String.to_atom()
   end
 end

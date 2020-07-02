@@ -1,8 +1,7 @@
 # 2048
 To start the game:
 
-  * Install Mix dependencies with `mix deps.get`
-  * Install Node dependencies with `yarn --cwd ./assets install`
+  * Install dependencies with `mix setup`
   * Generate a self-signed SSL certificate with `mix phx.gen.cert`
   * Start Phoenix endpoint with `mix phx.server`
 

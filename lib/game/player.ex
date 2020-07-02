@@ -26,26 +26,27 @@ defmodule Game.Player do
 
   @doc """
   """
-  def new(name \\ "Anonymous")
+  def new(id \\ random_id())
 
-  def new(name) when is_bitstring(name) do
+  def new(id) when is_atom(id) do
     %Player{
       best: %Game{
         finished: nil,
         grid: nil,
-        id: :"123",
+        id: :G123,
         player: nil,
-        score: 2048,
+        score: 0,
         started: nil,
-        state: nil
+        status: nil,
+        tile: 2
       },
       games: [],
-      id: random_id(),
-      name: name
+      id: id,
+      name: "Anonymous"
     }
   end
 
-  def new(_name) do
+  def new(_id) do
     {:error, :invalid_player}
   end
 
@@ -56,7 +57,8 @@ defmodule Game.Player do
   def random_id() do
     make_ref()
     |> inspect()
-    |> String.replace(["#", ".", "<", ">", "Reference"], "")
+    |> String.replace(["#", ".", "<", ">"], "")
+    |> String.replace("Reference", "P")
     |> String.to_atom()
   end
 end

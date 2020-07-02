@@ -7,8 +7,7 @@ defmodule Game.Application do
     children = [
       GameWeb.Telemetry,
       {Phoenix.PubSub, name: Game.PubSub},
-      GameWeb.Endpoint,
-      Game.Keeper
+      GameWeb.Endpoint
     ]
 
     opts = [name: Game.Supervisor, strategy: :one_for_one]

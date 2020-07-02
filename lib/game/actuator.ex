@@ -6,7 +6,7 @@ defmodule Game.Actuator do
   # Configuration
   # ======================================================================================
 
-  alias Game.{Cell, Coordinate, Grid, Keeper, Tile}
+  alias Game.{Cell, Coordinate, Grid, Manager, Tile}
 
   # ======================================================================================
   # Attributes
@@ -49,16 +49,16 @@ defmodule Game.Actuator do
   @doc """
   """
   def move(%Grid{} = grid, direction) when direction in @directions do
-    case Keeper.check_status(:lost) do
-      false ->
-        grid
-        |> prepare()
-        |> traverse(direction)
-        |> actuate()
+    # case Manager.check_state(:lost) do
+    #   false ->
+    grid
+    |> prepare()
+    |> traverse(direction)
+    |> actuate()
 
-      true ->
-        {:error, :game_over}
-    end
+    #   true ->
+    #     {:error, :game_over}
+    # end
   end
 
   def move(_direction), do: {:error, :move, :invalid_move}
@@ -130,11 +130,10 @@ defmodule Game.Actuator do
   end
 
   defp check_state(%Grid{} = grid) do
-    # Keeper.increase_score(merged_tile.value)
-    # Keeper.check_status(:won, merged_tile.value)
+    # Manager.check_state(:won, merged_tile.value)
 
     # unless Grid.moves_available?(grid) do
-    #   Keeper.set_status(:lost)
+    #   Manager.set_status(:lost)
     # end
 
     grid
@@ -162,6 +161,8 @@ defmodule Game.Actuator do
 
             dismissed_tile = tile |> Tile.move!(next_coordinate) |> Tile.dismiss!()
             merged_tile = next_tile |> Tile.merge!()
+
+            # Manager.increase_score(merged_tile.value)
 
             grid
             |> dismiss_tile(dismissed_tile)

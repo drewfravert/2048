@@ -73,7 +73,7 @@
 
   --color-base: var(--color-gray-6);
   --color-link: var(--color-tile-256);
-  --color-background: hsl(var(--hue-base), var(--saturation-base), 100%);
+  --color-background: var(--color-gray-0);
 
   /*
   ========================================================================================
@@ -217,3 +217,27 @@
 @media (min-width: 972px) and (min-height: 1782px), (min-height: 972px) and (min-width: 1944px) {
   :root { --spacing: 2.6rem; }
 }
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-gray-0: hsl(var(--hue-base), var(--saturation-base), 12.5%);
+    --color-gray-1: hsl(var(--hue-base), var(--saturation-base), 12.5%);
+    --color-gray-2: hsl(var(--hue-base), var(--saturation-base), 25%);
+    --color-gray-3: hsl(var(--hue-base), var(--saturation-base), 37.5%);
+    --color-gray-4: hsl(var(--hue-base), var(--saturation-base), 50%);
+    --color-gray-5: hsl(var(--hue-base), var(--saturation-base), 62.5%);
+    --color-gray-6: hsl(var(--hue-base), var(--saturation-base), 75%);
+    --color-gray-7: hsl(var(--hue-base), var(--saturation-base), 87.5%);
+    --color-gray-8: hsl(var(--hue-base), var(--saturation-base), 100%);
+
+    --color-alpha-0: hsla(var(--hue-base), var(--saturation-base), 100%, 12.5%);
+    --color-alpha-1: hsla(var(--hue-base), var(--saturation-base), 100%, 12.5%);
+    --color-alpha-2: hsla(var(--hue-base), var(--saturation-base), 100%, 25%);
+    --color-alpha-3: hsla(var(--hue-base), var(--saturation-base), 100%, 37.5%);
+    --color-alpha-4: hsla(var(--hue-base), var(--saturation-base), 100%, 50%);
+    --color-alpha-5: hsla(var(--hue-base), var(--saturation-base), 100%, 62.5%);
+    --color-alpha-6: hsla(var(--hue-base), var(--saturation-base), 100%, 75%);
+    --color-alpha-7: hsla(var(--hue-base), var(--saturation-base), 100%, 87.5%);
+    --color-alpha-8: hsla(var(--hue-base), var(--saturation-base), 100%, 100%);
+  }
+} */
