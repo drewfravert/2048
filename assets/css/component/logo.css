@@ -18,6 +18,6 @@
     content: "2048";
     font-size: 3em;
     font-weight: var(--font-weight-black);
-    color: var(--color-white);
+    color: var(--color-gray-0);
   }
 }

@@ -1,37 +1,53 @@
 defmodule Game.Coordinate do
-  @moduledoc false
+  @moduledoc """
+  """
 
   # ======================================================================================
   # Configuration
   # ======================================================================================
 
   alias __MODULE__
-
-  # ======================================================================================
-  # Constants
-  # ======================================================================================
-
-  @grid_range 1..4
+  alias Game.{Cell, Grid}
 
   # ======================================================================================
   # Schema
   # ======================================================================================
 
-  @enforce_keys [:column, :row]
+  @enforce_keys [:x, :y]
 
-  defstruct [:column, :row]
+  defstruct [:x, :y]
 
   # ======================================================================================
   # Public Functions
   # ======================================================================================
 
-  def new(column, row) when column in @grid_range and row in @grid_range do
-    {:ok, %Coordinate{column: column, row: row}}
+  @doc """
+  """
+  def equal?(%Coordinate{} = coordinate_a, %Coordinate{} = coordinate_b) do
+    coordinate_a === coordinate_b
   end
 
-  def new(_column, _row), do: {:error, :invalid_coordinate}
+  @doc """
+  """
+  def new(x, y) when is_integer(x) and is_integer(y) do
+    %Coordinate{x: x, y: y}
+  end
 
-  # ======================================================================================
-  # Private Functions
-  # ======================================================================================
+  def new(_x, _y) do
+    {:error, :invalid_coordinate}
+  end
+
+  @doc """
+  """
+  def random_empty(%Grid{} = grid) do
+    %Cell{coordinate: coordinate} = Grid.list_empty_cells(grid) |> Enum.random()
+
+    coordinate
+  end
+
+  @doc """
+  """
+  def valid?(%Grid{columns: columns, rows: rows}, %Coordinate{x: x, y: y}) do
+    x in rows and y in columns
+  end
 end

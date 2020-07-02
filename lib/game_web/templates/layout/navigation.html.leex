@@ -1,0 +1,9 @@
+<nav class="navigation" role="navigation">
+  <ul class="flex justify-between align-center flex-wrap text-small text-medium no-list-style">
+    <li><%= link "Play Game", to: "" %></li>
+    <li><%= link "Leaderboard", to: Routes.page_path(@socket, :leaderboard) %></li>
+    <li><%= link "Watch", to: Routes.page_path(@socket, :watch) %></li>
+    <li><%= link "About", to: Routes.page_path(@socket, :about) %></li>
+    <li><%= link "Privacy", to: Routes.page_path(@socket, :privacy) %></li>
+  </ul>
+</nav>

@@ -10,14 +10,15 @@ defmodule GameWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
+  # pipeline :api do
+  #   plug :accepts, ["json"]
+  # end
 
   scope "/", GameWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", GameLive
+
     get "/about", PageController, :about
     get "/game/:id", PageController, :game
     get "/leaderboard", PageController, :leaderboard
@@ -25,9 +26,9 @@ defmodule GameWeb.Router do
     get "/watch", PageController, :watch
   end
 
-  scope "/api", GameWeb do
-    pipe_through :api
-  end
+  # scope "/api", GameWeb do
+  #   pipe_through :api
+  # end
 
   if Mix.env() in [:dev, :test] do
     import Phoenix.LiveDashboard.Router

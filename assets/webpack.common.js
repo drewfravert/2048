@@ -15,18 +15,16 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, "./ts/app.ts"),
+    app: path.resolve(__dirname, "./js/app.js")
   },
   module: {
     rules: [
       {
-        test: /\.(j|t)s$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: [{
+        use: {
           loader: "babel-loader",
-        }, {
-          loader: "ts-loader",
-        }],
+        }
       },
       {
         test: /\.css$/,
@@ -36,8 +34,8 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              importLoaders: 1,
-            },
+              importLoaders: 1
+            }
           },
           {
             loader: "postcss-loader",
@@ -45,15 +43,12 @@ module.exports = {
               ident: "postcss",
               plugins: () => [
                 require("autoprefixer"),
-                require("postcss-nested"),
-              ],
-            },
-          },
-        ],
-      },
-    ],
-  },
-  resolve: {
-    extensions: [".ts", ".js"],
-  },
+                require("postcss-nested")
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
 };

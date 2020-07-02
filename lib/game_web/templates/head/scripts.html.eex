@@ -1,0 +1,1 @@
+<script phx-track-static defer src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>

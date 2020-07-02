@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1em 0 3.5em;
-  background-color: var(--color-lightergray);
+  background-color: var(--color-gray-2);
   border-radius: var(--border-radius-base);
   font-size: var(--font-size-smaller);
   font-weight: var(--font-weight-semibold);
@@ -22,13 +22,13 @@
   &::before {
     content: attr(data-title);
     font-size: 1.5em;
-    color: var(--color-darkgray);
+    color: var(--color-gray-5);
     text-transform: uppercase;
   }
 
   &::after {
     content: attr(data-score);
     font-size: 2em;
-    color: var(--color-white);
+    color: var(--color-gray-0);
   }
 }

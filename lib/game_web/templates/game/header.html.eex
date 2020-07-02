@@ -1,7 +1,0 @@
-<header class="header">
-  <%= link "", to: Routes.page_path(@conn, :about), class: "logo" %>
-  <%= link "", to: Routes.page_path(@conn, :game, "123"), class: "scoreboard current", data_title: "Score", data_score: "0" %>
-  <%= link "", to: Routes.page_path(@conn, :game, "123"), class: "scoreboard best", data_title: "Best", data_score: "0" %>
-  <%= link "New Game", to: Routes.page_path(@conn, :index), class: "new button button-base button-fixed" %>
-  <%= link "Leaderboard", to: Routes.page_path(@conn, :leaderboard), class: "leaderboard button button-base button-fixed" %>
-</header>

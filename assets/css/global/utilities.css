@@ -663,20 +663,20 @@
 ==========================================================================================
 */
 
-.color-black { color: var(--color-black) !important; }
+.color-gray-8 { color: var(--color-gray-8) !important; }
 
-.color-darkestgray { color: var(--color-darkestgray) !important; }
+.color-gray-7 { color: var(--color-gray-7) !important; }
 
-.color-darkergray { color: var(--color-darkergray) !important; }
+.color-gray-6 { color: var(--color-gray-6) !important; }
 
-.color-darkgray { color: var(--color-darkgray) !important; }
+.color-gray-5 { color: var(--color-gray-5) !important; }
 
-.color-gray { color: var(--color-gray) !important; }
+.color-gray-4 { color: var(--color-gray-4) !important; }
 
-.color-lightgray { color: var(--color-lightgray) !important; }
+.color-gray-3 { color: var(--color-gray-3) !important; }
 
-.color-lightergray { color: var(--color-lightergray) !important; }
+.color-gray-2 { color: var(--color-gray-2) !important; }
 
-.color-lightestgray { color: var(--color-lightestgray) !important; }
+.color-gray-1 { color: var(--color-gray-1) !important; }
 
-.color-white { color: var(--color-white) !important; }
+.color-gray-0 { color: var(--color-gray-0) !important; }

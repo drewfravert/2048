@@ -1,7 +1,0 @@
-<article class="game current">
-  <%= render GameWeb.GameView, "header.html", conn: @conn %>
-  <%= render GameWeb.GameView, "message.html" %>
-  <%= render GameWeb.GameView, "grid.html" %>
-  <%= render GameWeb.GameView, "instructions.html" %>
-  <%= render GameWeb.LayoutView, "navigation.html", conn: @conn %>
-</article>

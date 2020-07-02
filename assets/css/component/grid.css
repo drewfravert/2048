@@ -7,7 +7,7 @@
 .grid {
   display: grid;
   padding: var(--spacing);
-  background-color: var(--color-lightgray);
+  background-color: var(--color-gray-3);
   border-radius: calc(var(--border-radius-base) * 2);
   position: relative;
   width: var(--grid-width);
@@ -32,7 +32,7 @@
 
     .cell {
       display: grid;
-      background-color: var(--color-lightergray);
+      background-color: var(--color-gray-2);
       border-radius: var(--border-radius-base);
     }
   }

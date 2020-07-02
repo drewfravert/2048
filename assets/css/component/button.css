@@ -18,7 +18,7 @@ button,
   cursor: pointer;
 
   &:disabled {
-    color: var(--color-lightestgray);
+    color: var(--color-gray-1);
     text-decoration: none;
     cursor: default;
   }
@@ -36,18 +36,18 @@ button,
     border-radius: var(--border-radius-base);
     font-size: var(--font-size-smaller);
     font-weight: var(--font-weight-semibold);
-    color: var(--color-white);
+    color: var(--color-gray-0);
     line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
 
     &:disabled {
-      background-color: var(--color-lightestgray);
-      color: var(--color-lightergray);
+      background-color: var(--color-gray-1);
+      color: var(--color-gray-2);
     }
 
     &:not(:disabled) {
-      &:hover { color: var(--color-white); }
+      &:hover { color: var(--color-gray-0); }
     }
   }
 

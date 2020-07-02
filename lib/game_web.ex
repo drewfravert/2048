@@ -40,7 +40,8 @@ defmodule GameWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {GameWeb.LayoutView, "live.html"}
+        layout: {GameWeb.LayoutView, "live.html"},
+        container: {:main, class: "main", role: "main"}
 
       unquote(view_helpers())
     end

@@ -1,0 +1,7 @@
+<article class="game current">
+  <%= live_component @socket, HeaderComponent, id: @game.id, game: @game %>
+  <%= live_component @socket, MessageComponent, id: @game.id, game: @game %>
+  <%= live_component @socket, GridComponent, id: @game.id, game: @game %>
+  <%= live_component @socket, InstructionsComponent %>
+  <%= live_component @socket, NavigationComponent %>
+</article>

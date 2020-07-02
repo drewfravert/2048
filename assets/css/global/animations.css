@@ -4,24 +4,26 @@
 ==========================================================================================
 */
 
-.animates {
-  will-change: opacity, transform;
+.animates,
+.animates::before,
+.animates::after {
+  will-change: transform;
   transform: translate(0, 0);
-  transition-property: opacity, transform;
+  transition-property: transform;
   transition-duration: var(--animation-duration-base);
   transition-timing-function: var(--animation-timing-function-base);
   animation-duration: var(--animation-duration-base);
   animation-timing-function: var(--animation-timing-function-base);
 }
 
-@keyframes spawn {
+@keyframes spawned {
   0% { transform: scale(0); }
 
   100% { transform: scale(1); }
 }
 
-@keyframes merge {
-  0% { transform: scale(0); }
+@keyframes merged {
+  0% { transform: scale(1); }
 
   50% { transform: scale(1.11111); }
 

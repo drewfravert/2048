@@ -33,21 +33,31 @@
   --hue-base: 24;
   --saturation-base: 6%;
 
-  --color-white: hsl(var(--hue-base), var(--saturation-base), 100%);
-  --color-lightestgray: hsl(var(--hue-base), var(--saturation-base), 87.5%);
-  --color-lightergray: hsl(var(--hue-base), var(--saturation-base), 75%);
-  --color-lightgray: hsl(var(--hue-base), var(--saturation-base), 62.5%);
-  --color-gray: hsl(var(--hue-base), var(--saturation-base), 50%);
-  --color-darkgray: hsl(var(--hue-base), var(--saturation-base), 37.5%);
-  --color-darkergray: hsl(var(--hue-base), var(--saturation-base), 25%);
-  --color-darkestgray: hsl(var(--hue-base), var(--saturation-base), 12.5%);
-  --color-black: hsl(var(--hue-base), var(--saturation-base), 0%);
+  --color-gray-0: hsl(var(--hue-base), var(--saturation-base), 100%);
+  --color-gray-1: hsl(var(--hue-base), var(--saturation-base), 87.5%);
+  --color-gray-2: hsl(var(--hue-base), var(--saturation-base), 75%);
+  --color-gray-3: hsl(var(--hue-base), var(--saturation-base), 62.5%);
+  --color-gray-4: hsl(var(--hue-base), var(--saturation-base), 50%);
+  --color-gray-5: hsl(var(--hue-base), var(--saturation-base), 37.5%);
+  --color-gray-6: hsl(var(--hue-base), var(--saturation-base), 25%);
+  --color-gray-7: hsl(var(--hue-base), var(--saturation-base), 12.5%);
+  --color-gray-8: hsl(var(--hue-base), var(--saturation-base), 0%);
+
+  --color-alpha-0: hsla(var(--hue-base), var(--saturation-base), 0%, 0%);
+  --color-alpha-1: hsla(var(--hue-base), var(--saturation-base), 0%, 12.5%);
+  --color-alpha-2: hsla(var(--hue-base), var(--saturation-base), 0%, 25%);
+  --color-alpha-3: hsla(var(--hue-base), var(--saturation-base), 0%, 37.5%);
+  --color-alpha-4: hsla(var(--hue-base), var(--saturation-base), 0%, 50%);
+  --color-alpha-5: hsla(var(--hue-base), var(--saturation-base), 0%, 62.5%);
+  --color-alpha-6: hsla(var(--hue-base), var(--saturation-base), 0%, 75%);
+  --color-alpha-7: hsla(var(--hue-base), var(--saturation-base), 0%, 87.5%);
+  --color-alpha-8: hsla(var(--hue-base), var(--saturation-base), 0%, 100%);
 
   --color-tile-2: hsl(12, 0%, 96%);
-  --color-tile-4: hsl(12, 12%, 84%);
-  --color-tile-8: hsl(12, 24%, 72%);
-  --color-tile-16: hsl(18, 36%, 60%);
-  --color-tile-32: hsl(18, 48%, 54%);
+  --color-tile-4: hsl(12, 12%, 90%);
+  --color-tile-8: hsl(12, 24%, 84%);
+  --color-tile-16: hsl(12, 36%, 72%);
+  --color-tile-32: hsl(12, 48%, 60%);
   --color-tile-64: hsl(18, 60%, 48%);
   --color-tile-128: hsl(24, 72%, 48%);
   --color-tile-256: hsl(30, 84%, 48%);
@@ -55,13 +65,13 @@
   --color-tile-1024: hsl(42, 96%, 48%);
   --color-tile-2048: hsl(48, 96%, 48%);
   --color-tile-4096: hsl(96, 96%, 36%);
-  --color-tile-8192: hsl(144, 96%, 30%);
-  --color-tile-16384: hsl(192, 96%, 24%);
-  --color-tile-32768: hsl(240, 96%, 18%);
-  --color-tile-65536: hsl(288, 96%, 12%);
-  --color-tile-131072: hsl(336, 96%, 6%);
+  --color-tile-8192: hsl(144, 96%, 24%);
+  --color-tile-16384: hsl(192, 96%, 18%);
+  --color-tile-32768: hsl(240, 96%, 12%);
+  --color-tile-65536: hsl(288, 96%, 6%);
+  --color-tile-max: hsl(336, 96%, 0%);
 
-  --color-base: var(--color-darkergray);
+  --color-base: var(--color-gray-6);
   --color-link: var(--color-tile-256);
   --color-background: hsl(var(--hue-base), var(--saturation-base), 100%);
 
@@ -81,7 +91,7 @@
   ========================================================================================
   */
 
-  --font-family-base: "";
+  --font-family-base: "Inter";
   --font-family-fallback: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
 
   /* font sizes */
@@ -127,7 +137,7 @@
   ========================================================================================
   */
 
-  --animation-duration-base: 150ms;
+  --animation-duration-base: 100ms;
   --animation-timing-function-base: ease;
 
   /*

@@ -23,23 +23,25 @@ module.exports = merge(common, {
   mode: "production",
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "../priv/static/js"),
+    path: path.resolve(__dirname, "../priv/static/js")
   },
   optimization: {
     minimizer: [
       new TerserWebpackPlugin({}),
-      new OptimizeCSSAssetsPlugin({}),
-    ],
+      new OptimizeCSSAssetsPlugin({})
+    ]
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "../css/[name].css",
     }),
-    new CopyWebpackPlugin([
-      {
-        from: "static/",
-        to: "../",
-      },
-    ]),
-  ],
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "static/",
+          to: "../"
+        }
+      ]
+    })
+  ]
 });
