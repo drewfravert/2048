@@ -19,7 +19,7 @@ defmodule GameWeb.Endpoint do
     at: "/",
     from: :game,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt 2048.webmanifest)
+    only: ~w(css fonts images js favicon.ico robots.txt game.webmanifest)
 
   # Code reloading can be explicitly enabled under the :code_reloader configuration of your endpoint.
   if code_reloading? do
