@@ -1,4 +1,4 @@
-<!-- <link rel="manifest" href="<%# Routes.static_path(@conn, "/site.webmanifest") %>"> -->
+<link rel="manifest" href="<%= Routes.static_path(@conn, "/2048.webmanifest") %>">
 <meta name="theme-color" content="#f0c105">
 <link rel="icon" href="<%= Routes.static_path(@conn, "/images/icon.svg") %>">
 <link rel="mask-icon" href="<%= Routes.static_path(@conn, "/images/icon.svg") %>" color="#f0c105">

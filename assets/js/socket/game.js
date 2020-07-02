@@ -25,17 +25,16 @@ const gameSocket = new LiveSocket(gameEndpoint, Socket, { params: { _csrf_token:
 */
 
 const Game = {
+
   initialize() {
+
     bindNProgress();
 
-    // connect if there are any LiveViews on the page
     gameSocket.connect();
-
-    // expose gameSocket on window for web console debug logs and latency simulation
-    // Game.enableDebug();
-    // Game.enableLatencySim(1000);
     window.Game = gameSocket;
-  },
+
+  }
+
 };
 
 /*
@@ -44,10 +43,11 @@ const Game = {
 ==========================================================================================
 */
 
-// show progress bar on live navigation and form submits
 const bindNProgress = () => {
+
   window.addEventListener("phx:page-loading-start", (info) => NProgress.start());
   window.addEventListener("phx:page-loading-stop", (info) => NProgress.done());
+
 };
 
 /*

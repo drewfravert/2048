@@ -19,10 +19,4 @@ import Game from "./socket/game.js";
 ==========================================================================================
 */
 
-const App = {
-  initialize() {
-    Game.initialize();
-  }
-};
-
-App.initialize();
+Game.initialize();
