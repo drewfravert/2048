@@ -92,7 +92,11 @@ const bindTouchEnd = () => {
 
 const bindTouchMove = () => {
 
-  document.addEventListener(event.touchmove, (event) => event.preventDefault());
+  document.addEventListener(event.touchmove, (event) => {
+
+    event.preventDefault();
+
+  }, { passive: false });
 
 };
 
