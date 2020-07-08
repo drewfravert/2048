@@ -20,4 +20,5 @@ body {
   color: var(--color-base);
   line-height: var(--line-height-base);
   letter-spacing: var(--letter-spacing-base);
+  overscroll-behavior: none;
 }

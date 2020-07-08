@@ -4,7 +4,6 @@
 ==========================================================================================
 */
 
-import { now } from "lodash";
 import { event } from "../global/browser.js";
 import { key, number } from "../global/constants.js";
 
@@ -14,9 +13,8 @@ import { key, number } from "../global/constants.js";
 ==========================================================================================
 */
 
-const duration = 300;
 const swipe = {};
-const threshold = 150;
+const threshold = 20;
 
 /*
 ==========================================================================================
@@ -63,33 +61,26 @@ const bindTouchSurface = () => {
 
 const bindTouchCancel = () => {
 
-  // window.addEventListener(event.touchcancel, (event) => event.preventDefault());
+  // document.addEventListener(event.touchcancel, (event) => event.preventDefault());
 
 };
 
 const bindTouchEnd = () => {
 
-  window.addEventListener(event.touchend, (event) => {
-
-    event.preventDefault();
+  document.addEventListener(event.touchend, (event) => {
 
     const context = event.changedTouches[0];
     const distanceX = context.pageX - swipe.originX;
     const distanceY = context.pageY - swipe.originY;
     const swipeAxis = (Math.abs(distanceX) > Math.abs(distanceY)) ? "horizontal" : "vertical";
-    const elapsedTime = now() - swipe.startTime;
 
-    if (elapsedTime <= duration) {
+    if ((swipeAxis === "horizontal") && (Math.abs(distanceX) >= threshold)) {
 
-      if ((swipeAxis === "horizontal") && (Math.abs(distanceX) >= threshold)) {
+      swipe.direction = (distanceX > number.zero) ? key.right : key.left;
 
-        swipe.direction = (distanceX > number.zero) ? key.right : key.left;
+    } else if ((swipeAxis === "vertical") && (Math.abs(distanceY) >= threshold)) {
 
-      } else if ((swipeAxis === "vertical") && (Math.abs(distanceY) >= threshold)) {
-
-        swipe.direction = (distanceY > number.zero) ? key.down : key.up;
-
-      }
+      swipe.direction = (distanceY > number.zero) ? key.down : key.up;
 
     }
 
@@ -101,15 +92,13 @@ const bindTouchEnd = () => {
 
 const bindTouchMove = () => {
 
-  window.addEventListener(event.touchmove, (event) => event.preventDefault());
+  document.addEventListener(event.touchmove, (event) => event.preventDefault());
 
 };
 
 const bindTouchStart = () => {
 
-  window.addEventListener(event.touchstart, (event) => {
-
-    event.preventDefault();
+  document.addEventListener(event.touchstart, (event) => {
 
     const context = event.changedTouches[0];
 
@@ -117,7 +106,6 @@ const bindTouchStart = () => {
     swipe.distance = number.zero;
     swipe.originX = context.pageX;
     swipe.originY = context.pageY;
-    swipe.startTime = now();
 
   });
 
