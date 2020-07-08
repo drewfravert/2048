@@ -7,6 +7,7 @@
 import { Socket } from "phoenix";
 import { LiveSocket } from "phoenix_live_view";
 import NProgress from "nprogress";
+import { csrfToken } from "../global/selectors.js";
 
 /*
 ==========================================================================================
@@ -14,9 +15,12 @@ import NProgress from "nprogress";
 ==========================================================================================
 */
 
-const csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content");
 const gameEndpoint = "/game/live";
-const gameSocket = new LiveSocket(gameEndpoint, Socket, { params: { _csrf_token: csrfToken } });
+const gameSocket = new LiveSocket(gameEndpoint, Socket, {
+  params: {
+    _csrf_token: csrfToken.getAttribute("content")
+  }
+});
 
 /*
 ==========================================================================================

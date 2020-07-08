@@ -12,6 +12,7 @@ import "../css/app.css";
 
 // js
 import Game from "./socket/game.js";
+import Touch from "./module/touch.js";
 
 /*
 ==========================================================================================
@@ -20,3 +21,4 @@ import Game from "./socket/game.js";
 */
 
 Game.initialize();
+Touch.initialize();
