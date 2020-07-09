@@ -4,4 +4,9 @@
 ==========================================================================================
 */
 
-.main { grid-area: main; }
+.main {
+  grid-area: main;
+  padding: calc(var(--spacing) * 2);
+  background-color: var(--color-background);
+  min-height: 100vh;
+}

@@ -13,8 +13,13 @@ import { key, number } from "../global/constants.js";
 ==========================================================================================
 */
 
-const swipe = {};
-const threshold = 20;
+const surface = document.documentElement;
+const swipe = {
+  direction: null,
+  distance: number.zero,
+  emitted: false
+};
+const threshold = number.ten * number.two; // 20
 
 /*
 ==========================================================================================
@@ -32,13 +37,9 @@ const Touch = {
 
   emit(direction) {
 
-    if (direction) {
+    const keyUpEvent = new KeyboardEvent(event.keyup, { key: direction })
 
-      const keyUpEvent = new KeyboardEvent(event.keyup, { key: direction })
-
-      window.dispatchEvent(keyUpEvent)
-
-    }
+    window.dispatchEvent(keyUpEvent)
 
   }
 
@@ -55,36 +56,16 @@ const bindTouchSurface = () => {
   bindTouchStart();
   bindTouchMove();
   bindTouchEnd();
-  bindTouchCancel();
-
-};
-
-const bindTouchCancel = () => {
-
-  // document.addEventListener(event.touchcancel, (event) => event.preventDefault());
 
 };
 
 const bindTouchEnd = () => {
 
-  document.addEventListener(event.touchend, (event) => {
+  surface.addEventListener(event.touchend, (event) => {
 
-    const context = event.changedTouches[0];
-    const distanceX = context.pageX - swipe.originX;
-    const distanceY = context.pageY - swipe.originY;
-    const swipeAxis = (Math.abs(distanceX) > Math.abs(distanceY)) ? "horizontal" : "vertical";
-
-    if ((swipeAxis === "horizontal") && (Math.abs(distanceX) >= threshold)) {
-
-      swipe.direction = (distanceX > number.zero) ? key.right : key.left;
-
-    } else if ((swipeAxis === "vertical") && (Math.abs(distanceY) >= threshold)) {
-
-      swipe.direction = (distanceY > number.zero) ? key.down : key.up;
-
-    }
-
-    Touch.emit(swipe.direction);
+    swipe.direction = null;
+    swipe.distance = number.zero;
+    swipe.emitted = false;
 
   });
 
@@ -92,9 +73,35 @@ const bindTouchEnd = () => {
 
 const bindTouchMove = () => {
 
-  document.addEventListener(event.touchmove, (event) => {
+  surface.addEventListener(event.touchmove, (event) => {
 
     event.preventDefault();
+
+    const context = event.changedTouches[0];
+    const distanceX = context.pageX - swipe.originX;
+    const distanceY = context.pageY - swipe.originY;
+    const absoluteX = Math.abs(distanceX);
+    const absoluteY = Math.abs(distanceY);
+    const axisX = absoluteX > absoluteY;
+    const axisY = !axisX;
+
+    if (axisX && (absoluteX >= threshold)) {
+
+      swipe.direction = (distanceX > number.zero) ? key.right : key.left;
+
+    } else if (axisY && (absoluteY >= threshold)) {
+
+      swipe.direction = (distanceY > number.zero) ? key.down : key.up;
+
+    }
+
+    if (!swipe.emitted && swipe.direction) {
+
+      swipe.emitted = true;
+
+      Touch.emit(swipe.direction);
+
+    }
 
   }, { passive: false });
 
@@ -102,12 +109,10 @@ const bindTouchMove = () => {
 
 const bindTouchStart = () => {
 
-  document.addEventListener(event.touchstart, (event) => {
+  surface.addEventListener(event.touchstart, (event) => {
 
     const context = event.changedTouches[0];
 
-    swipe.direction = null;
-    swipe.distance = number.zero;
     swipe.originX = context.pageX;
     swipe.originY = context.pageY;
 

@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: var(--color-tile-2048);
   font-family: var(--font-family-base), var(--font-family-fallback);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-base);

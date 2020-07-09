@@ -24,7 +24,15 @@ const key = {
 };
 
 // useful numbers
-const number = { zero: 0 };
+const number = {
+  zero: 0,
+  one: 1,
+  two: 2,
+  three: 3,
+  ten: 10,
+  hundred: 100,
+  thousand: 1000
+};
 
 const Constants = { key, number };
 
