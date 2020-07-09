@@ -71,6 +71,7 @@
   --color-tile-65536: hsl(288, 96%, 6%);
   --color-tile-max: hsl(336, 96%, 0%);
 
+  --color-primary: var(--color-tile-2048);
   --color-base: var(--color-gray-6);
   --color-link: var(--color-tile-256);
   --color-background: var(--color-gray-0);

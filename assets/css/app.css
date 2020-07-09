@@ -34,11 +34,4 @@
 @import "./component/grid.css";
 @import "./component/tile.css";
 @import "./component/leader.css";
-
-/*
-==========================================================================================
-  Vendor
-==========================================================================================
-*/
-
-@import "../node_modules/nprogress/nprogress.css";
+@import "./component/nprogress.css";

@@ -1,0 +1,17 @@
+#nprogress {
+  pointer-events: none;
+
+  .bar {
+    background-color: var(--color-primary);
+    position: fixed;
+    height: calc(var(--spacing) / 4);
+    top: env(safe-area-inset-top);
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .peg { display: none; }
+
+  .spinner { display: none; }
+}
