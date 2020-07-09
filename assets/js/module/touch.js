@@ -17,7 +17,7 @@ const surface = document.documentElement;
 const swipe = {
   direction: null,
   distance: number.zero,
-  emitted: false
+  dispatched: false
 };
 const threshold = number.ten * number.two; // 20
 
@@ -35,11 +35,11 @@ const Touch = {
 
   },
 
-  emit(direction) {
+  dispatchKeyEvent(direction) {
 
-    const keyUpEvent = new KeyboardEvent(event.keyup, { key: direction })
+    const keyEvent = new KeyboardEvent(event.keyup, { key: direction })
 
-    window.dispatchEvent(keyUpEvent)
+    window.dispatchEvent(keyEvent)
 
   }
 
@@ -65,7 +65,7 @@ const bindTouchEnd = () => {
 
     swipe.direction = null;
     swipe.distance = number.zero;
-    swipe.emitted = false;
+    swipe.notDispatched = true;
 
   });
 
@@ -77,7 +77,7 @@ const bindTouchMove = () => {
 
     event.preventDefault();
 
-    const context = event.changedTouches[0];
+    const context = touchContext(event);
     const distanceX = context.pageX - swipe.originX;
     const distanceY = context.pageY - swipe.originY;
     const absoluteX = Math.abs(distanceX);
@@ -87,19 +87,19 @@ const bindTouchMove = () => {
 
     if (axisX && (absoluteX >= threshold)) {
 
-      swipe.direction = (distanceX > number.zero) ? key.right : key.left;
+      swipe.direction = (distanceX < number.zero) ? key.left : key.right;
 
     } else if (axisY && (absoluteY >= threshold)) {
 
-      swipe.direction = (distanceY > number.zero) ? key.down : key.up;
+      swipe.direction = (distanceY < number.zero) ? key.up : key.down;
 
     }
 
-    if (!swipe.emitted && swipe.direction) {
+    if (swipe.notDispatched && swipe.direction) {
 
-      swipe.emitted = true;
+      swipe.notDispatched = false;
 
-      Touch.emit(swipe.direction);
+      Touch.dispatchKeyboardEvent(swipe.direction);
 
     }
 
@@ -111,7 +111,7 @@ const bindTouchStart = () => {
 
   surface.addEventListener(event.touchstart, (event) => {
 
-    const context = event.changedTouches[0];
+    const context = touchContext(event);
 
     swipe.originX = context.pageX;
     swipe.originY = context.pageY;
@@ -119,6 +119,8 @@ const bindTouchStart = () => {
   });
 
 };
+
+const touchContext = (event) => event.changedTouches[0];
 
 /*
 ==========================================================================================

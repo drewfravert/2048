@@ -1,7 +1,10 @@
 <header class="header">
-  <%= link "", to: Routes.page_path(@socket, :about), class: "logo" %>
-  <%= link "", to: Routes.page_path(@socket, :game, @game.id), class: "scoreboard current", data_title: "Score", data_score: @game.score %>
-  <%= link "", to: Routes.page_path(@socket, :game, @game.player.best.id), class: "scoreboard best", data_title: "Best", data_score: @game.player.best.score %>
+  <%= link "", to: Routes.live_path(@socket, GameWeb.GameLive), class: "logo" %>
+  <div class="scoreboard current" data-title="Score" data-score="<%= @game.score %>"></div>
+  <%# link "", to: Routes.page_path(@socket, :game, @game.id), class: "scoreboard current", data_title: "Score", data_score: @game.score %>
+  <div class="scoreboard best" data-title="Best" data-score="<%= @game.player.best.score %>"></div>
+  <%# link "", to: Routes.page_path(@socket, :game, @game.player.best.id), class: "scoreboard best", data_title: "Best", data_score: @game.player.best.score %>
   <%= content_tag :button, "New Game", type: "button", class: "new button-base button-fixed", phx_click: "new", phx_target: @myself %>
-  <%= link "Leaderboard", to: Routes.page_path(@socket, :leaderboard), class: "leaderboard button button-base button-fixed" %>
+  <%# link "Leaderboard", to: Routes.page_path(@socket, :leaderboard), class: "leaderboard button button-base button-fixed", disabled: true %>
+  <%= content_tag :button, "Leaderboard", type: "button", class: "leaderboard button button-base button-fixed", disabled: true %>
 </header>

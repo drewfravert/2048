@@ -15,6 +15,7 @@ button,
   text-decoration-thickness: 0.09375em;
   text-underline-offset: 0.09375em;
   white-space: nowrap;
+  user-select: none;
   cursor: pointer;
 
   &:disabled {

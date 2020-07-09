@@ -10,6 +10,8 @@ html {
   background: var(--color-background);
   font-size: 10px;
   text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 body {
