@@ -5,8 +5,6 @@
 */
 
 body {
-  display: grid;
-  grid-template-areas: "main";
   margin: 0 auto;
   position: relative;
   min-width: var(--width-min);
