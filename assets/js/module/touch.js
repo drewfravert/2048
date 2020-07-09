@@ -99,7 +99,7 @@ const bindTouchMove = () => {
 
       swipe.notDispatched = false;
 
-      Touch.dispatchKeyboardEvent(swipe.direction);
+      Touch.dispatchKeyEvent(swipe.direction);
 
     }
 
