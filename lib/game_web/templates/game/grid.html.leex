@@ -1,4 +1,4 @@
-<section class="grid" phx-window-keyup="move" phx-throttle="100" phx-target="<%= @myself %>">
+<section class="grid" phx-window-keyup="move" phx-throttle="200" phx-target="<%= @myself %>">
   <div class="tiles">
     <%= for {_, tile} <- @game.grid.tiles do %>
       <%= live_component @socket, TileComponent, id: tile.id, tile: tile %>
