@@ -139,7 +139,7 @@
   */
 
   --animation-duration-base: 100ms;
-  --animation-timing-function-base: ease;
+  --animation-timing-function-base: ease-in-out;
 
   /*
   ========================================================================================

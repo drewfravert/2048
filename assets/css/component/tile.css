@@ -8,6 +8,7 @@
   position: absolute;
   width: calc((100% - (var(--spacing) * (var(--grid-columns) - 1))) / var(--grid-columns));
   height: calc((100% - (var(--spacing) * (var(--grid-columns) - 1))) / var(--grid-columns));
+  z-index: 2;
 
   &::after {
     content: attr(data-value);
@@ -20,7 +21,9 @@
     font-weight: var(--font-weight-black);
     color: var(--color-gray-0);
     line-height: 1;
-    animation-delay: calc(var(--animation-duration-base) / 2);
+    animation-duration: calc(var(--animation-duration-base) * 2);
+    animation-timing-function: ease;
+    animation-delay: var(--animation-duration-base);
     animation-fill-mode: backwards;
     width: 100%;
     height: 100%;
@@ -30,11 +33,6 @@
     z-index: 1;
 
     &::after { animation-name: spawned; }
-  }
-
-  &[data-state="activated"],
-  &[data-state="dismissed"] {
-    z-index: 2;
   }
 
   &[data-state="merged"] {
