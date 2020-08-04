@@ -1,77 +1,52 @@
 defmodule Game.Manager do
   use GenServer
 
-  # ======================================================================================
-  # Configuration
-  # ======================================================================================
-
-  alias __MODULE__
-
-  # ======================================================================================
-  # Attributes
-  # ======================================================================================
+  alias Game.Official
 
   @points Enum.map(1..20, &(:math.pow(2, &1) |> round()))
   @statuses [:initialized, :playing, :won, :continue, :lost]
 
   # ======================================================================================
-  # Client API
+  # Client
   # ======================================================================================
 
-  def check_state(:lost) do
-    false
-  end
-
-  def check_state(:won, value) do
-    value === 2048
-  end
-
-  def game_state(pid) do
-    GenServer.call(pid, :game_state)
+  def get_status(pid) do
+    GenServer.call(pid, :get_status)
   end
 
   def increase_score(pid, points) when points in @points do
     GenServer.cast(pid, {:increase_score, points})
   end
 
-  def quit(pid) do
-    GenServer.stop(pid)
+  def start_link() do
+    GenServer.start_link(__MODULE__, :ok)
   end
 
-  def start_link(game) do
-    GenServer.start_link(Manager, game)
+  def update_status(pid, status) when status in @statuses do
+    GenServer.cast(pid, {:set_status, status})
   end
 
   # ======================================================================================
-  # Server API
+  # Server
   # ======================================================================================
 
   @impl true
-  def init(game) do
-    {:ok, game}
+  def init(:ok) do
+    {:ok, Game.new()}
   end
 
   @impl true
-  def handle_call(:game_state, _from, game) do
-    {:reply, game, game}
+  def handle_call(:get_status, _from, %Game{} = game) do
+    {:reply, Official.get_status(game), game}
   end
 
   @impl true
-  def handle_cast({:increase_score, points}, %Game{score: score} = game) do
-    game = %Game{game | score: score + points}
-
-    {:noreply, game}
+  def handle_cast({:increase_score, points}, %Game{} = game) do
+    {:noreply, Official.increase_score(game, points)}
   end
 
   @impl true
-  def handle_info(_msg, game) do
-    {:noreply, game}
-  end
-
-  @impl true
-  def terminate(_reason, game) do
-    IO.inspect(game)
-
-    :ok
+  def handle_cast({:update_status, status}, %Game{} = game) do
+    {:noreply, Official.update_status(game, status)}
   end
 end

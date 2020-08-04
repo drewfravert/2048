@@ -1,6 +1,10 @@
 defmodule GameWeb.Router do
   use GameWeb, :router
 
+  # ======================================================================================
+  # Pipelines
+  # ======================================================================================
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -13,6 +17,10 @@ defmodule GameWeb.Router do
   # pipeline :api do
   #   plug :accepts, ["json"]
   # end
+
+  # ======================================================================================
+  # Scopes
+  # ======================================================================================
 
   scope "/", GameWeb do
     pipe_through :browser

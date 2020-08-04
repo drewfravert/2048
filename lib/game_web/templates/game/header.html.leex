@@ -6,5 +6,5 @@
   <%# link "", to: Routes.page_path(@socket, :game, @game.player.best.id), class: "scoreboard best", data_title: "Best", data_score: @game.player.best.score %>
   <%= content_tag :button, "New Game", type: "button", class: "new button-base button-fixed", phx_click: "new", phx_target: @myself %>
   <%# link "Leaderboard", to: Routes.page_path(@socket, :leaderboard), class: "leaderboard button button-base button-fixed", disabled: true %>
-  <%= content_tag :button, "Leaderboard", type: "button", class: "leaderboard button button-base button-fixed", disabled: true %>
+  <%= content_tag :button, "Leaderboard", type: "button", class: "leaderboard button button-base button-fixed", disabled: true, title: "Coming soon" %>
 </header>

@@ -1,34 +1,19 @@
 defmodule Game.Cell do
-  @moduledoc """
-  """
-
-  # ======================================================================================
-  # Configuration
-  # ======================================================================================
-
   alias __MODULE__
   alias Game.{Coordinate, Grid, Tile}
-
-  # ======================================================================================
-  # Schema
-  # ======================================================================================
 
   @enforce_keys [:coordinate, :tile]
 
   defstruct [:coordinate, :tile]
 
   # ======================================================================================
-  # Public Functions
+  # Public
   # ======================================================================================
 
-  @doc """
-  """
   def at_coordinate(%Grid{cells: cells}, %Coordinate{} = target_coordinate) do
     Enum.find(cells, &(&1.coordinate === target_coordinate))
   end
 
-  @doc """
-  """
   def new(coordinate, tile \\ nil)
 
   def new(%Coordinate{} = coordinate, %Tile{} = tile) do

@@ -1,17 +1,6 @@
 defmodule Game.Grid do
-  @moduledoc """
-  """
-
-  # ======================================================================================
-  # Configuration
-  # ======================================================================================
-
   alias __MODULE__
   alias Game.{Cell, Coordinate, Tile}
-
-  # ======================================================================================
-  # Attributes
-  # ======================================================================================
 
   @enforce_keys [:cells, :columns, :rows, :tiles]
   @columns 1..4
@@ -23,18 +12,12 @@ defmodule Game.Grid do
     right: %{x: 1, y: 0}
   }
 
-  # ======================================================================================
-  # Schema
-  # ======================================================================================
-
   defstruct [:cells, :columns, :rows, :tiles]
 
   # ======================================================================================
-  # Public Functions
+  # Public
   # ======================================================================================
 
-  @doc """
-  """
   def contains_combinable_cells?(%Grid{cells: cells} = grid) do
     Enum.any?(cells, fn
       %Cell{coordinate: %Coordinate{x: x, y: y}, tile: %Tile{value: value}} ->
@@ -50,16 +33,12 @@ defmodule Game.Grid do
     end)
   end
 
-  @doc """
-  """
   def contains_empty_cells?(%Grid{} = grid) do
     grid
     |> list_empty_cells()
     |> Enum.any?()
   end
 
-  @doc """
-  """
   def farthest_empty_cell(%Grid{} = grid, %Cell{coordinate: coordinate} = cell, direction) do
     next_coordinate =
       Coordinate.new(coordinate.x + @vectors[direction].x, coordinate.y + @vectors[direction].y)
@@ -73,26 +52,18 @@ defmodule Game.Grid do
     end
   end
 
-  @doc """
-  """
   def list_empty_cells(%Grid{cells: cells}) do
     cells |> Enum.filter(&is_nil(&1.tile))
   end
 
-  @doc """
-  """
   def list_occupied_cells(%Grid{cells: cells}) do
     cells |> Enum.reject(&is_nil(&1.tile))
   end
 
-  @doc """
-  """
   def moves_available?(grid) do
     contains_empty_cells?(grid) or contains_combinable_cells?(grid)
   end
 
-  @doc """
-  """
   def new() do
     cells =
       for row <- @rows, column <- @columns do
@@ -102,8 +73,6 @@ defmodule Game.Grid do
     %Grid{cells: cells, columns: @columns, rows: @rows, tiles: %{}}
   end
 
-  @doc """
-  """
   def output(%Grid{cells: cells, columns: columns, rows: rows} = grid) do
     x_max = Enum.max(columns)
     y_max = Enum.max(rows)
