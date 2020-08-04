@@ -3,5 +3,6 @@ import Config
 
 # configure endpoint
 config :game, GameWeb.Endpoint,
+  server: true,
   http: [port: {:system, "PORT"}],
   url: [host: nil, port: 443]
