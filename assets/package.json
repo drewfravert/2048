@@ -1,7 +1,7 @@
 {
   "name": "2048",
   "author": "Drew Fravert",
-  "homepage": "https://drewfravert.com/work/2048",
+  "homepage": "https://ex2048.gigalixirapp.com/",
   "license": "MIT",
   "version": "1.0.0",
   "repository": {
@@ -12,7 +12,7 @@
     "url": "https://github.com/drewfravert/2048/issues"
   },
   "scripts": {
-    "deploy": "webpack --config webpack.production.js",
+    "build": "webpack --config webpack.production.js --color",
     "watch": "webpack --config webpack.development.js --watch --color"
   },
   "dependencies": {
@@ -23,22 +23,22 @@
     "phoenix_live_view": "file:../deps/phoenix_live_view"
   },
   "devDependencies": {
-    "@babel/core": "7.10.4",
-    "@babel/preset-env": "7.10.4",
-    "autoprefixer": "9.8.4",
+    "@babel/core": "7.11.0",
+    "@babel/preset-env": "7.11.0",
+    "autoprefixer": "9.8.6",
     "babel-loader": "8.1.0",
     "copy-webpack-plugin": "6.0.3",
-    "css-loader": "3.6.0",
+    "css-loader": "4.2.0",
     "cssnano": "4.1.10",
-    "eslint": "7.3.1",
+    "eslint": "7.6.0",
     "mini-css-extract-plugin": "0.9.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "postcss-loader": "3.0.0",
-    "postcss-nested": "4.2.1",
-    "terser-webpack-plugin": "3.0.6",
-    "webpack": "4.43.0",
+    "postcss-nested": "4.2.3",
+    "terser-webpack-plugin": "4.0.0",
+    "webpack": "4.44.1",
     "webpack-cli": "3.3.12",
-    "webpack-merge": "4.2.2"
+    "webpack-merge": "5.1.1"
   },
   "browserslist": [
     "defaults"
