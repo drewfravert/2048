@@ -12,7 +12,7 @@
     "url": "https://github.com/drewfravert/2048/issues"
   },
   "scripts": {
-    "build": "webpack --config webpack.production.js --color",
+    "deploy": "webpack --config webpack.production.js --color",
     "watch": "webpack --config webpack.development.js --watch --color"
   },
   "dependencies": {
