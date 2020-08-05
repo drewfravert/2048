@@ -39,9 +39,10 @@ defmodule Game.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.14"},
       {:plug_cowboy, "~> 2.3"},
+      {:sobelow, "~> 0.10", only: :dev},
       {:telemetry_metrics, "~> 0.5"},
       {:telemetry_poller, "~> 0.5"},
-      {:tzdata, "~> 1.0.3"}
+      {:tzdata, "~> 1.0"}
     ]
   end
 
