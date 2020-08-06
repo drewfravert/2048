@@ -1,9 +1,7 @@
 defmodule MessageComponent do
-  use Phoenix.LiveComponent
+  @moduledoc false
 
-  # ======================================================================================
-  # Mount Handler
-  # ======================================================================================
+  use Phoenix.LiveComponent
 
   def mount(socket) do
     assigns = [
@@ -14,10 +12,6 @@ defmodule MessageComponent do
 
     {:ok, socket}
   end
-
-  # ======================================================================================
-  # Render Handler
-  # ======================================================================================
 
   def render(assigns) do
     GameWeb.GameView.render("message.html", assigns)

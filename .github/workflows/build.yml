@@ -15,12 +15,18 @@ jobs:
         elixir: ["1.10.4"]
         node: ["14.6.0"]
 
+    services:
+      db:
+        image: postgres:12
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: game_test
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     steps:
       - uses: actions/checkout@v2.3.1
-
-      # ==================================================================================
-      # Setup
-      # ==================================================================================
 
       - name: Setup elixir
         uses: actions/setup-elixir@v1.3.0
@@ -35,10 +41,6 @@ jobs:
 
       - name: Setup dependencies
         run: mix setup
-
-      # ==================================================================================
-      # Cache
-      # ==================================================================================
 
       - name: Cache mix dependencies
         uses: actions/cache@v2.1.0
@@ -68,43 +70,27 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      # ==================================================================================
-      # Format
-      # ==================================================================================
-
       - name: Check formatting
         run: mix format --check-formatted
 
-      # ==================================================================================
-      # Analysis
-      # ==================================================================================
-
-      # - name: Run credo
-      #   run: mix credo --strict
+      - name: Run credo
+        run: mix credo --strict
 
       - name: Run sobelow
         run: mix sobelow --verbose
-
-      # ==================================================================================
-      # Test
-      # ==================================================================================
 
       - name: Run tests
         run: mix test
 
   deploy:
     needs: verify
-    if: github.ref == 'refs/heads/master'
+    if: github.ref === 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.1
         with:
           ref: master
           fetch-depth: 0
-
-      # ==================================================================================
-      # Gigalixir
-      # ==================================================================================
 
       - name: Run deploy
         uses: mhanberg/gigalixir-action@v0.3.0

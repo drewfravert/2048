@@ -1,4 +1,6 @@
 defmodule Game.Coordinate do
+  @moduledoc false
+
   alias __MODULE__
   alias Game.{Cell, Grid}
 

@@ -13,6 +13,7 @@ defmodule GameWeb.ChannelCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -26,10 +27,10 @@ defmodule GameWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Game.Repo)
+    :ok = Sandbox.checkout(Game.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Game.Repo, {:shared, self()})
+      Sandbox.mode(Game.Repo, {:shared, self()})
     end
 
     :ok

@@ -1,4 +1,6 @@
 defmodule Game.Tile do
+  @moduledoc false
+
   alias __MODULE__
   alias Game.{Cell, Coordinate, Grid, Tile}
 
@@ -69,9 +71,7 @@ defmodule Game.Tile do
   defp random_id() do
     make_ref()
     |> inspect()
-    |> String.replace(["#", ".", "<", ">"], "")
-    |> String.replace("Reference", "T")
-    |> String.to_atom()
+    |> String.replace(["Reference", "#", ".", "<", ">"], "")
   end
 
   defp random_value() do

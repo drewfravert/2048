@@ -12,6 +12,7 @@ defmodule Game.DataCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -25,10 +26,10 @@ defmodule Game.DataCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Game.Repo)
+    :ok = Sandbox.checkout(Game.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Game.Repo, {:shared, self()})
+      Sandbox.mode(Game.Repo, {:shared, self()})
     end
 
     :ok
