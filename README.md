@@ -1,5 +1,3 @@
-![2048](assets/static/images/readme.png)
-
 # 2048
 ![Build Status](https://img.shields.io/github/workflow/status/drewfravert/2048/Build)
 ![Release Version](https://img.shields.io/github/v/release/drewfravert/2048)
@@ -7,7 +5,9 @@
 ![Development Dependency Status](https://img.shields.io/david/dev/drewfravert/2048?path=assets)
 ![License](https://img.shields.io/github/license/drewfravert/2048)
 
-This is a port of the popular tile game by [Gabriele Cirulli](http://gabrielecirulli.com/) written in [Elixir](https://elixir-lang.org/). Mostly, this is a means for me to learn and experiment with the language the [Phoenix](https://phoenixframework.org/) framework, but also so that my fiancé can play her favorite game without advertisements. 😝
+![2048](assets/static/images/readme.png)
+
+This is a port of the popular tile game by [Gabriele Cirulli](http://gabrielecirulli.com/) written in [Elixir](https://elixir-lang.org/). This repo is a medium for me to experiment with the Elixir language, [Phoenix](https://phoenixframework.org/) and [OTP](http://erlang.org/doc/system_architecture_intro/sys_arch_intro.html), to show off what I know, and so that my fiancé can play her favorite game without all of the annoying ads. 😝
 
 The game uses LiveView, which obviously isn't ideal for this type of game, but, again, this is a sandbox for my personal learning and enjoyment. That said, if you have a decent internet connection, you likely won't notice any serious latency.
 
