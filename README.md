@@ -1,10 +1,10 @@
 ![2048](assets/static/images/readme.png)
 
 # 2048
-![Workflow Status](https://img.shields.io/github/workflow/status/drewfravert/2048/build)
+![Build Status](https://img.shields.io/github/workflow/status/drewfravert/2048/Build)
 ![Release Version](https://img.shields.io/github/v/release/drewfravert/2048)
-![dependency Status](https://img.shields.io/david/drewfravert/2048?path=assets)
-![devDependency Status](https://img.shields.io/david/dev/drewfravert/2048?path=assets)
+![Dependency Status](https://img.shields.io/david/drewfravert/2048?path=assets)
+![Development Dependency Status](https://img.shields.io/david/dev/drewfravert/2048?path=assets)
 ![License](https://img.shields.io/github/license/drewfravert/2048)
 
 This is a port of the popular tile game by [Gabriele Cirulli](http://gabrielecirulli.com/) written in [Elixir](https://elixir-lang.org/). Mostly, this is a means for me to learn and experiment with the language the [Phoenix](https://phoenixframework.org/) framework, but also so that my fiancé can play her favorite game without advertisements. 😝
