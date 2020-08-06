@@ -1,4 +1,6 @@
 defmodule Game.Grid do
+  @moduledoc false
+
   alias __MODULE__
   alias Game.{Cell, Coordinate, Tile}
 
@@ -40,9 +42,7 @@ defmodule Game.Grid do
   end
 
   def farthest_empty_cell(%Grid{} = grid, %Cell{coordinate: coordinate} = cell, direction) do
-    next_coordinate =
-      Coordinate.new(coordinate.x + @vectors[direction].x, coordinate.y + @vectors[direction].y)
-
+    next_coordinate = Coordinate.new(coordinate.x + @vectors[direction].x, coordinate.y + @vectors[direction].y)
     next_cell = Cell.at_coordinate(grid, next_coordinate)
     obstruction? = is_nil(next_cell) or not is_nil(next_cell.tile)
 
@@ -71,33 +71,5 @@ defmodule Game.Grid do
       end
 
     %Grid{cells: cells, columns: @columns, rows: @rows, tiles: %{}}
-  end
-
-  def output(%Grid{cells: cells, columns: columns, rows: rows} = grid) do
-    x_max = Enum.max(columns)
-    y_max = Enum.max(rows)
-    occupied_cells = Grid.list_occupied_cells(grid)
-
-    Enum.each(cells, fn %Cell{coordinate: %Coordinate{x: x, y: y}} = cell ->
-      cell_match =
-        Enum.find(occupied_cells, fn %Cell{tile: tile} ->
-          tile.coordinate === cell.coordinate and not Tile.dismissed?(tile)
-        end)
-
-      value = (cell_match && cell_match.tile && cell_match.tile.value) || "."
-
-      cond do
-        x === x_max and y === y_max ->
-          IO.write("#{value}\nScore: 0\n")
-
-        x === x_max ->
-          IO.write("#{value}\n")
-
-        true ->
-          IO.write("#{value} ")
-      end
-    end)
-
-    grid
   end
 end

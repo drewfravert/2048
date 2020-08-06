@@ -1,27 +1,14 @@
 defmodule Game do
-  @moduledoc """
-  """
+  @moduledoc false
+
+  alias Game.{Actuator, Grid}
+
+  @enforce_keys [:finished, :grid, :id, :score, :started, :tile]
+
+  defstruct [:finished, :grid, :id, :score, :started, :tile]
 
   # ======================================================================================
-  # Configuration
-  # ======================================================================================
-
-  alias Game.{Actuator, Grid, Player}
-
-  # ======================================================================================
-  # Attributes
-  # ======================================================================================
-
-  @enforce_keys [:finished, :grid, :id, :player, :score, :started, :status, :tile]
-
-  # ======================================================================================
-  # Schema
-  # ======================================================================================
-
-  defstruct [:finished, :grid, :id, :player, :score, :started, :status, :tile]
-
-  # ======================================================================================
-  # Public Functions
+  # Public
   # ======================================================================================
 
   def new() do
@@ -32,10 +19,8 @@ defmodule Game do
         |> Actuator.spawn_tile()
         |> Actuator.spawn_tile(),
       id: random_id(),
-      player: Player.new(),
       score: 0,
       started: DateTime.now!("Etc/UTC"),
-      status: :initialized,
       tile: 2
     }
   end
@@ -45,14 +30,12 @@ defmodule Game do
   end
 
   # ======================================================================================
-  # Private Functions
+  # Private
   # ======================================================================================
 
   defp random_id() do
     make_ref()
     |> inspect()
-    |> String.replace(["#", ".", "<", ">"], "")
-    |> String.replace("Reference", "G")
-    |> String.to_atom()
+    |> String.replace(["Reference", "#", ".", "<", ">"], "")
   end
 end
