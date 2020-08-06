@@ -7,21 +7,22 @@
 ![Development Dependency Status](https://img.shields.io/david/dev/drewfravert/2048?path=assets)
 ![License](https://img.shields.io/github/license/drewfravert/2048)
 
-This is a port of the popular tile game by [Gabriele Cirulli](https://www.gabrielecirulli.com/) written in [Elixir](https://elixir-lang.org/). This repo is a medium for me to experiment with the Elixir language, [Phoenix](https://phoenixframework.org/) and [OTP](http://erlang.org/doc/system_architecture_intro/sys_arch_intro.html), to show off what I know, and so that my fiancé can play her favorite game without all of the annoying ads. 😝
+This is a port of the popular tile game by [Gabriele Cirulli](https://www.gabrielecirulli.com/) written in [Elixir](https://elixir-lang.org/). This repo is a medium for me to experiment with Elixir, [Phoenix](https://phoenixframework.org/) and [OTP](http://erlang.org/doc/system_architecture_intro/sys_arch_intro.html), to demonstrate my knowledge, and so my fiancé can play her favorite game without ads.
 
 The game uses LiveView, which obviously isn't ideal for this type of game, but, again, this is a sandbox for my personal learning and enjoyment. That said, if you have a decent internet connection, you likely won't notice any serious latency.
 
 
 ## Quick Start
-To start the game:
+Want to go ahead and jump in? You can [play the game online](https://ex2048.gigalixirapp.com/).
+
+If you would prefer to run the game locally, you will need to:
 
   * Clone this repo with `git clone git@github.com:drewfravert/2048.com.git`
   * Install dependencies with `mix setup`
   * Generate a self-signed SSL certificate with `mix phx.gen.cert`
   * Add `game.local` as an alias to `localhost` in your `/etc/hosts` file
   * Start Phoenix endpoint with `mix phx.server`
-
-Now visit [`https://game.local:4001`](https://game.local:4001) from your browser.
+  * Visit [`https://game.local:4001`](https://game.local:4001) from your browser.
 
 
 ## Feature Roadmap
@@ -30,8 +31,8 @@ Now visit [`https://game.local:4001`](https://game.local:4001) from your browser
   * Live observation of ongoing games
 
 
-## Requests / Questions
-If you happen to find yourself playing this game and want to request a new feature or you have questions, you can reach me at [drew@fravert.dev](mailto:drew@fravert.dev).
+## Questions / Requests
+If you have questions or would like to request a new feature, you may reach me at [drew@fravert.dev](mailto:drew@fravert.dev).
 
 
 ## License
