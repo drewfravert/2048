@@ -18,7 +18,7 @@ Want to go ahead and jump in? You can [play the game online](https://ex2048.giga
 If you would prefer to run the game locally, you will need to:
 
   * Clone this repo with `git clone git@github.com:drewfravert/2048.com.git`
-  * Install dependencies with `mix setup`
+  * Setup application environment with `mix setup`
   * Add `game.local` as an alias to `localhost` in your `/etc/hosts` file
   * Start Phoenix endpoint with `mix phx.server`
   * Visit [`https://game.local:4001`](https://game.local:4001) from your browser.
