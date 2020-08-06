@@ -27,7 +27,7 @@ defmodule Game.MixProject do
     [
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      setup: ["deps.get", "ecto.setup", "cmd yarn --cwd ./assets install"],
+      setup: ["deps.get", "ecto.setup", "cmd yarn --cwd ./assets install", "phx.gen.cert"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
     ]
   end
