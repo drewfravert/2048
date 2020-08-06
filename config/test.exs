@@ -1,9 +1,17 @@
 use Mix.Config
 
-# We don't run a server during test. If one is required, you can enable the server option below.
+# Repo
+config :game, Game.Repo,
+  username: "postgres",
+  password: "postgres",
+  database: "game_test#{System.get_env("MIX_TEST_PARTITION")}",
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox
+
+# Endpoint
 config :game, GameWeb.Endpoint,
   http: [port: 4002],
   server: false
 
-# Print only warnings and errors during test
+# Logger
 config :logger, level: :warn

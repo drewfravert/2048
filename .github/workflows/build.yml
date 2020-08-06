@@ -102,6 +102,10 @@ jobs:
           ref: master
           fetch-depth: 0
 
+      # ==================================================================================
+      # Gigalixir
+      # ==================================================================================
+
       - name: Run deploy
         uses: mhanberg/gigalixir-action@v0.3.0
         with:
@@ -109,4 +113,3 @@ jobs:
           GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
           GIGALIXIR_PASSWORD: ${{ secrets.GIGALIXIR_PASSWORD }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          MIGRATIONS: false
