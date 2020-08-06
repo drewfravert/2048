@@ -1,7 +1,7 @@
 use Mix.Config
 
 # Repo
-config :portfolio, Game.Repo,
+config :game, Game.Repo,
   username: "postgres",
   password: "postgres",
   database: "game_development",
