@@ -29,6 +29,7 @@ defmodule Game.MixProject do
   # project dependencies
   defp deps do
     [
+      {:benchee, "~> 1.0", only: :dev},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:floki, "~> 0.27", only: :test},
       {:gettext, "~> 0.18"},
