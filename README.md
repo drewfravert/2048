@@ -1,5 +1,5 @@
 # 2048
-<a href="https://ex2048.gigalixirapp.com/" style="margin: 0 0 32px 32px; width: 25%; float: right;"><img src="assets/static/images/icon.png" style="vertical-align: top;"></a>
+<img src="assets/static/images/icon.png" width="25%" height="auto" align="right" valign="top">
 
 ![Build Status](https://img.shields.io/github/workflow/status/drewfravert/2048/Build)
 ![Release Version](https://img.shields.io/github/v/release/drewfravert/2048)
