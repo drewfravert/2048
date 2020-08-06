@@ -1,5 +1,5 @@
 # 2048
-<img src="assets/static/images/icon.png" width="25%" height="auto" align="right" valign="top">
+<img src="assets/static/images/icon.svg" width="25%" height="auto" align="right" valign="top">
 
 ![Build Status](https://img.shields.io/github/workflow/status/drewfravert/2048/Build)
 ![Release Version](https://img.shields.io/github/v/release/drewfravert/2048)
