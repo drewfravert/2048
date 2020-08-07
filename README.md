@@ -1,5 +1,5 @@
 # 2048
-<img src="assets/static/images/icon.svg" width="25%" height="auto" align="right" valign="top">
+[<img src="assets/static/images/icon.svg" width="25%" height="auto" align="right" valign="top">](https://ex2048.gigalixirapp.com/)
 
 ![Build Status](https://img.shields.io/github/workflow/status/drewfravert/2048/Build)
 ![Release Version](https://img.shields.io/github/v/release/drewfravert/2048)
@@ -7,7 +7,7 @@
 ![Development Dependency Status](https://img.shields.io/david/dev/drewfravert/2048?path=assets)
 ![License](https://img.shields.io/github/license/drewfravert/2048)
 
-This is a port of the popular tile game by [Gabriele Cirulli](https://www.gabrielecirulli.com/) written in [Elixir](https://elixir-lang.org/). This repo is a medium for me to experiment with Elixir, [Phoenix](https://phoenixframework.org/) & [OTP](http://erlang.org/doc/system_architecture_intro/sys_arch_intro.html), to demonstrate my development knowledge, and so my fiancé can play her favorite game ad free. 😝
+This is a port of the popular tile game by [Gabriele Cirulli](https://www.gabrielecirulli.com/) written in [Elixir](https://elixir-lang.org/). This repo is a medium for me to experiment with Elixir, [Phoenix](https://phoenixframework.org/) & [OTP](http://erlang.org/doc/system_architecture_intro/sys_arch_intro.html), to demonstrate my development knowledge, and so my fiancé can play her favorite game ad-free. 😝
 
 The game uses LiveView, which obviously isn't ideal for this type of game, but, again, this is a sandbox for my personal learning and enjoyment. That said, if you have a decent internet connection, you shouldn't really notice any latency.
 
