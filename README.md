@@ -17,7 +17,7 @@ Want to go ahead and jump in? [Play the game online](https://ex2048.gigalixirapp
 
 If you would prefer to run the game locally:
 
-  * Clone this repo with `git clone git@github.com:drewfravert/2048.com.git`
+  * Clone this repo with `git clone git@github.com:drewfravert/2048.git`
   * Setup the application environment with `mix setup`
   * Add `game.local` as an alias to `localhost` in your `/etc/hosts` file
   * Start the server with `mix phx.server`
