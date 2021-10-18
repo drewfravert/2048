@@ -5,9 +5,11 @@ defmodule Game.Application do
 
   def start(_type, _args) do
     children = [
+      Game.Repo,
       GameWeb.Telemetry,
       {Phoenix.PubSub, name: Game.PubSub},
-      GameWeb.Endpoint
+      GameWeb.Endpoint,
+      Game.Manager
     ]
 
     opts = [name: Game.Supervisor, strategy: :one_for_one]

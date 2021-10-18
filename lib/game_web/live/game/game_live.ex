@@ -1,27 +1,14 @@
 defmodule GameWeb.GameLive do
-  use GameWeb, :live_view
+  @moduledoc false
 
-  # ======================================================================================
-  # Mount Handler
-  # ======================================================================================
+  use GameWeb, :live_view
+  alias Game.Manager
 
   def mount(_params, _session, socket) do
-    case connected?(socket) do
-      true ->
-        socket = assign(socket, game: Game.new())
+    socket = assign(socket, game: Manager.current_game())
 
-        {:ok, socket}
-
-      false ->
-        socket = assign(socket, game: Game.new())
-
-        {:ok, socket}
-    end
+    {:ok, socket}
   end
-
-  # ======================================================================================
-  # Render Handler
-  # ======================================================================================
 
   def render(assigns) do
     GameWeb.PageView.render("index.html", assigns)

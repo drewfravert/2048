@@ -4,6 +4,7 @@ erl_crash.dump
 game-*.tar
 /.fetch
 /_build/
+/assets/.yarn/
 /assets/node_modules/
 /cover/
 /deps/

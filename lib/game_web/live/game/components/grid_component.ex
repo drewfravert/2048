@@ -1,69 +1,38 @@
 defmodule GridComponent do
+  @moduledoc false
+
   use Phoenix.LiveComponent
-
-  # ======================================================================================
-  # Configuration
-  # ======================================================================================
-
-  alias Game.Actuator
-
-  # ======================================================================================
-  # Render Handler
-  # ======================================================================================
-
-  def render(assigns) do
-    GameWeb.GameView.render("grid.html", assigns)
-  end
-
-  # ======================================================================================
-  # Event Handlers
-  # ======================================================================================
+  alias Game.Manager
 
   def handle_event("move", %{"key" => "ArrowUp"}, socket) do
-    socket =
-      update(socket, :game, fn %Game{grid: grid} = game ->
-        grid = grid |> Actuator.move(:up)
-
-        %Game{game | grid: grid}
-      end)
+    Manager.move(:up)
 
     {:noreply, socket}
   end
 
   def handle_event("move", %{"key" => "ArrowDown"}, socket) do
-    socket =
-      update(socket, :game, fn %Game{grid: grid} = game ->
-        grid = grid |> Actuator.move(:down)
-
-        %Game{game | grid: grid}
-      end)
+    Manager.move(:down)
 
     {:noreply, socket}
   end
 
   def handle_event("move", %{"key" => "ArrowLeft"}, socket) do
-    socket =
-      update(socket, :game, fn %Game{grid: grid} = game ->
-        grid = grid |> Actuator.move(:left)
-
-        %Game{game | grid: grid}
-      end)
+    Manager.move(:left)
 
     {:noreply, socket}
   end
 
   def handle_event("move", %{"key" => "ArrowRight"}, socket) do
-    socket =
-      update(socket, :game, fn %Game{grid: grid} = game ->
-        grid = grid |> Actuator.move(:right)
-
-        %Game{game | grid: grid}
-      end)
+    Manager.move(:right)
 
     {:noreply, socket}
   end
 
   def handle_event("move", _params, socket) do
     {:noreply, socket}
+  end
+
+  def render(assigns) do
+    GameWeb.GameView.render("grid.html", assigns)
   end
 end

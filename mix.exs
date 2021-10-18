@@ -7,7 +7,7 @@ defmodule Game.MixProject do
     [
       app: :game,
       version: "0.1.0",
-      elixir: "1.10.4",
+      elixir: "1.12.2",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -34,24 +34,24 @@ defmodule Game.MixProject do
 
   defp deps do
     [
-      {:benchee, "~> 1.0", only: :dev},
-      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:benchee, "~> 1.0.1", only: :dev},
+      {:credo, "~> 1.5.6", only: [:dev, :test], runtime: false},
       {:ecto_sql, "~> 3.4"},
-      {:floki, "~> 0.27", only: :test},
-      {:gettext, "~> 0.18"},
+      {:floki, ">= 0.31.0", only: :test},
+      {:gettext, "~> 0.18.2"},
       {:jason, "~> 1.2"},
-      {:phoenix, "~> 1.5"},
-      {:phoenix_ecto, "~> 4.1"},
-      {:phoenix_html, "~> 2.14"},
-      {:phoenix_live_dashboard, "~> 0.2"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.14"},
-      {:plug_cowboy, "~> 2.3"},
+      {:phoenix, "~> 1.5.10"},
+      {:phoenix_ecto, "~> 4.4.0"},
+      {:phoenix_html, "~> 2.14.3"},
+      {:phoenix_live_view, "~> 0.15.7"},
+      {:phoenix_live_reload, "~> 1.3.3", only: :dev},
+      {:phoenix_live_dashboard, "~> 0.4.0"},
+      {:plug_cowboy, "~> 2.5.1"},
       {:postgrex, "~> 0.15"},
-      {:sobelow, "~> 0.10", only: :dev},
-      {:telemetry_metrics, "~> 0.5"},
-      {:telemetry_poller, "~> 0.5"},
-      {:tzdata, "~> 1.0"}
+      {:sobelow, "~> 0.11.1", only: :dev},
+      {:telemetry_metrics, "~> 0.6.1"},
+      {:telemetry_poller, "~> 0.5.1"},
+      {:tzdata, "~> 1.1.0"}
     ]
   end
 
